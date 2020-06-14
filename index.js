@@ -164,3 +164,21 @@ function callSendAPI(sender_psid, response) {
         }
     });
 }
+
+function sendNotification(sender_psid, response) {
+    let request_body = {
+        "recipient": {
+            "id": sender_psid
+        },
+        "message": {
+            "attachment": {
+                "type": "template",
+                "payload": {
+                    "template_type":"one_time_notif_req",
+                    "title":"<TITLE_TEXT>",
+                    "payload":"<USER_DEFINED_PAYLOAD>"
+                }
+            }
+        }
+    }
+}
