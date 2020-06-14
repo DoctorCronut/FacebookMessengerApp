@@ -1,4 +1,4 @@
-const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
+const PAGE_ACCESS_TOKEN = 'EAAJ6dDA8aW8BANrRs3UY5ovI80nCtJ3FLva7UBLOBWeD7RfK4bMNFgZClXZBE2tv0NJ83xhOkiYOPNUZBf5y3w6CDlot7fHI5vsndfl2lH2WnIukVmvnStnJC0bxZBhiggGGlGxWeLc6wR4vHdmvltHtE91MaCoqJzsXqW3FWQZDZD';
 const request = require('request');
 
 'use strict';
