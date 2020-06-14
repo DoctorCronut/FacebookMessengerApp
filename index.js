@@ -143,29 +143,29 @@ function handlePostback(sender_psid, received_postback) {
 // Sends response messages via the Send API
 function callSendAPI(sender_psid, response) {
     // Construct the message body
-    // let request_body = {
-    //     "recipient": {
-    //         "id": sender_psid
-    //     },
-    //     "message": response
-    // }
-    let payload = response.payload;
-
     let request_body = {
         "recipient": {
             "id": sender_psid
         },
-        "message": {
-            "attachment": {
-                "type": "template",
-                "payload": {
-                    "template_type": "one_time_notif_req",
-                    "title": "<TITLE_TEXT>",
-                    "payload": payload
-                }
-            }
-        }
+        "message": response
     }
+    // let payload = response.payload;
+
+    // let request_body = {
+    //     "recipient": {
+    //         "id": sender_psid
+    //     },
+    //     "message": {
+    //         "attachment": {
+    //             "type": "template",
+    //             "payload": {
+    //                 "template_type": "one_time_notif_req",
+    //                 "title": "<TITLE_TEXT>",
+    //                 "payload": payload
+    //             }
+    //         }
+    //     }
+    // }
 
     // Send the HTTP request to the Messenger Platform
     request({
