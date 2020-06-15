@@ -184,36 +184,36 @@ function callSendAPI(sender_psid, response) {
     });
 }
 
-function getQuickReplies(sender_psid) {
-    console.log("in next function");
-    var quick_list = {
-        "text": "Check the next article?",
-        "quick_replies": [{
-                "content_type": "text",
-                "title": "More stories",
-                "payload": "more stories"
-            },
-            {
-                "content_type": "text",
-                "title": "Sport",
-                "payload": "sport"
-            },
-            {
-                "content_type": "text",
-                "title": "Business",
-                "payload": "business"
-            }
+// function getQuickReplies(sender_psid) {
+    // console.log("in next function");
+    // var quick_list = {
+    //     "text": "Check the next article?",
+    //     "quick_replies": [{
+    //             "content_type": "text",
+    //             "title": "More stories",
+    //             "payload": "more stories"
+    //         },
+    //         {
+    //             "content_type": "text",
+    //             "title": "Sport",
+    //             "payload": "sport"
+    //         },
+    //         {
+    //             "content_type": "text",
+    //             "title": "Business",
+    //             "payload": "business"
+    //         }
 
-        ]
-    };
-    bot.getProfile(payload.sender.id, (err, profile) => {
-        if (err) throw err
-        text = quick_list;
-        bot.sendMessage(payload.sender.id, text) {//this prints quick replies
-            console.log("sending message");
-        }
-    });
-}
+    //     ]
+    // };
+    // bot.getProfile(payload.sender.id, (err, profile) => {
+    //     if (err) throw err
+    //     text = quick_list;
+    //     bot.sendMessage(payload.sender.id, text) {//this prints quick replies
+    //         console.log("sending message");
+    //     }
+    // });
+// }
 
 // function sendQuickReply(sender_psid, response) {
 
