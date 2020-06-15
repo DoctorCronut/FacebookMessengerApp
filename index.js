@@ -132,7 +132,26 @@ function handlePostback(sender_psid, received_postback) {
 
     // Set the response based on the postback payload
     if (payload === 'yes') {
-        response = { "text": "Thanks!" }
+        response = {
+            "text": "Check the next article?",
+            "quick_replies": [{
+                    "content_type": "text",
+                    "title": "More stories",
+                    "payload": "more stories"
+                },
+                {
+                    "content_type": "text",
+                    "title": "Sport",
+                    "payload": "sport"
+                },
+                {
+                    "content_type": "text",
+                    "title": "Business",
+                    "payload": "business"
+                }
+    
+            ]
+        };
     } else if (payload === 'no') {
         response = { "text": "Oops, try sending another image." }
     }
@@ -149,23 +168,6 @@ function callSendAPI(sender_psid, response) {
         },
         "message": response
     }
-    // let payload = response.payload;
-
-    // let request_body = {
-    //     "recipient": {
-    //         "id": sender_psid
-    //     },
-    //     "message": {
-    //         "attachment": {
-    //             "type": "template",
-    //             "payload": {
-    //                 "template_type": "one_time_notif_req",
-    //                 "title": "<TITLE_TEXT>",
-    //                 "payload": payload
-    //             }
-    //         }
-    //     }
-    // }
 
     // Send the HTTP request to the Messenger Platform
     request({
@@ -182,20 +184,92 @@ function callSendAPI(sender_psid, response) {
     });
 }
 
-function sendNotification(sender_psid, response) {
-    let request_body = {
-        "recipient": {
-            "id": sender_psid
-        },
-        "message": {
-            "attachment": {
-                "type": "template",
-                "payload": {
-                    "template_type": "one_time_notif_req",
-                    "title": "<TITLE_TEXT>",
-                    "payload": "<USER_DEFINED_PAYLOAD>"
-                }
+function getQuickReplies(sender_psid) {
+    console.log("in next function");
+    var quick_list = {
+        "text": "Check the next article?",
+        "quick_replies": [{
+                "content_type": "text",
+                "title": "More stories",
+                "payload": "more stories"
+            },
+            {
+                "content_type": "text",
+                "title": "Sport",
+                "payload": "sport"
+            },
+            {
+                "content_type": "text",
+                "title": "Business",
+                "payload": "business"
             }
+
+        ]
+    };
+    bot.getProfile(payload.sender.id, (err, profile) => {
+        if (err) throw err
+        text = quick_list;
+        bot.sendMessage(payload.sender.id, text) {//this prints quick replies
+            console.log("sending message");
         }
-    }
+    });
 }
+
+// function sendQuickReply(sender_psid, response) {
+
+//     let request_body = {
+//         "recipient": {
+//             "id": sender_psid
+//         },
+//         "messaging_type": "RESPONSE",
+//         "message": {
+//             "text": "Pick a color:",
+//             "quick_replies": [
+//                 {
+//                     "content_type": "text",
+//                     "title": "Red",
+//                     "payload": response.payload,
+//                     "image_url": "http://example.com/img/red.png"
+//                 }, {
+//                     "content_type": "text",
+//                     "title": "Green",
+//                     "payload": "<POSTBACK_PAYLOAD>",
+//                     "image_url": "http://example.com/img/green.png"
+//                 }
+//             ]
+//         }
+//     }
+
+//     request(
+//         {
+//             "uri": "https://graph.facebook.com/v2.6/me/messages?access_token=EAAJ6dDA8aW8BANrRs3UY5ovI80nCtJ3FLva7UBLOBWeD7RfK4bMNFgZClXZBE2tv0NJ83xhOkiYOPNUZBf5y3w6CDlot7fHI5vsndfl2lH2WnIukVmvnStnJC0bxZBhiggGGlGxWeLc6wR4vHdmvltHtE91MaCoqJzsXqW3FWQZDZD",
+//             "qs": { "access_token": PAGE_ACCESS_TOKEN },
+//             "method": "POST",
+//             "json": request_body
+//         }, (err, res, body) => {
+//             if (!err) {
+//                 console.log('message sent!')
+//             } else {
+//                 console.error("Unable to send message:" + err);
+//             }
+//         }
+//     );
+// }
+
+// function sendNotification(sender_psid, response) {
+//     let request_body = {
+//         "recipient": {
+//             "id": sender_psid
+//         },
+//         "message": {
+//             "attachment": {
+//                 "type": "template",
+//                 "payload": {
+//                     "template_type": "one_time_notif_req",
+//                     "title": "<TITLE_TEXT>",
+//                     "payload": "<USER_DEFINED_PAYLOAD>"
+//                 }
+//             }
+//         }
+//     }
+// }
