@@ -1,0 +1,70 @@
+Make,Model,Classification,AveragePrice,0-60Time,MPG
+Honda,Civic 2.0,Compact,21000,8.1,34
+,Civic 1.5T,Compact,23000,7.5,34
+,Civic Si,Sport,26000,6.7,31
+,Civic Type R,Sport,38000,5,25
+,Insight,Compact,23500,7.3,52
+,Accord 1.5T,Midsized,25000,6.6,34
+,Accord 2.0T,Midsized,33000,5.2,27
+,Accord Hybrid,Midsized,26000,7,48
+,Clarity,Midsized,34500,7.5,47
+,Fit,Compact,17000,8.6,32
+,HRV,Compact,21500,9.9,32
+,CRV,Crossover,26500,7.6,32
+,CRV Hybrid,Crossover,29000,7.9,38
+,Passport,SUV,33000,6.1,22
+,Pilot,SUV,33000,6.2,23
+,Odyssey,MInivan,32000,6.7,24
+,Ridgeline,Truck,35000,6.9,23
+Toyota,Yaris,Compact,16000,9.5,35
+,Corolla,Compact,20000,8.2,35
+,Corolla Hybrid,Compact,23500,10.5,53
+,Camry 2.5L,Midsized,27000,7.7,35
+,Camry 3.5L,Midsized,33000,5.9,28
+,Camry Hybrid,Midsized,28000,7.3,52
+,Prius,Compact,25000,11.2,52
+,Prius Prime,Compact,28500,10.1,54
+,Avalon,Fullsized,36500,6,27
+,Avalon Hybrid,Fullsized,37500,7.8,44
+,Mirai,Midsized,60000,8.7,67
+,GT86,Sport,27500,6.8,25
+,GR Supra,Sport,51000,3.8,28
+,Sienna,Minivan,33000,7,24
+,Tacoma,Truck,27000,7.7,20
+,Tundra,Truck,34500,6.5,15
+,C-HR,Compact,22000,10.3,29
+,RAV4,Crossover,26000,8.2,31
+,RAV4 Hybrid,Crossover,29000,7.4,40
+,Highlander,SUV,35000,6.9,25
+,Highlander Hybrid,SUV,39000,7,35
+,4Runner,SUV,36500,7.6,17
+,Sequoia,SUV,50000,6.7,15
+,Land Cruiser,SUV,86000,6.7,15
+Nissan,Versa,Compact,15500,10,36
+,Sentra,Compact,20000,8.3,35
+,Altima,Midsized,25000,7.4,34
+,Maxima,Fullsized,35000,5.8,25
+,Leaf,Compact,32000,6.8,Electric
+,Kicks,Compact,19500,9.7,33
+,Rouge,Crossover,24000,9.4,30
+,Murano,Crossover,32000,7.3,24
+,Pathfinder,SUV,32000,7.4,24
+,Armada,SUV,48000,6.1,16
+,Frontier,Truck,20000,7.3,22
+,Titan,Truck,37000,6.5,18
+,Titan XD,Truck,45000,7.4,18
+,370Z Nismo,Sport,46000,4.9,22
+,370Z,Sport,36000,5.2,22
+,GTR Nismo,Sport,220000,2.7,19
+,GTR,Sport,130000,2.9,19
+Subaru,Impreza,Compact,21000,9,32
+,Legacy 2.5,Midsized,25000,8,31
+,Legacy 2.4T,Midsized,35000,6.1,28
+,Crosstrek,Crossover,24000,9.5,30
+,Forester,SUV,30000,8.4,29
+,Outback 2.5,Crossover,35000,8.7,29
+,Outback 2.4T,Crossover,39000,6.3,27
+,Ascent,SUV,40000,6.9,25
+,BRZ,Sport,30000,6.2,24
+,WRX,Sport,29000,5.5,24
+,WRX STI,Sport,40000,5,19
