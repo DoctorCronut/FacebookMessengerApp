@@ -233,7 +233,7 @@ module.exports = class Receive {
     
 };
 
-static function callSendAPI(requestBody) {
+function callSendAPI(requestBody) {
     request(
         {
             uri: '${config.mPlatfom}/me/messages',
@@ -251,7 +251,7 @@ static function callSendAPI(requestBody) {
     );
 }
 
-static function callFBAEventsAPI(senderPsid, eventName) {
+function callFBAEventsAPI(senderPsid, eventName) {
     // Construct the message body
     let requestBody = {
         event: "CUSTOM_APP_EVENTS",
