@@ -272,15 +272,15 @@ function callFBAEventsAPI(senderPsid, eventName) {
     // Send the HTTP request to the Activities API
     request(
         {
-            uri: `${config.mPlatfom}/${config.appId}/activities`,
+            uri: '${config.mPlatfom}/${config.appId}/activities',
             method: "POST",
             form: requestBody
         },
         error => {
             if (!error) {
-                console.log(`FBA event '${eventName}'`);
+                console.log('FBA event \'${eventName}\'');
             } else {
-                console.error(`Unable to send FBA event '${eventName}':` + error);
+                console.error('Unable to send FBA event \'${eventName}\':' + error);
             }
         }
     );
