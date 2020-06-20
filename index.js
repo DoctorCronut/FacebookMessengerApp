@@ -10,7 +10,28 @@ const
     app = express().use(bodyParser.json()); // creates express http server
 
 // Sets server port and logs message on success
-app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
+var listener = app.listen(config.port, function () {
+    console.log("Your app is listening on port " + listener.address().port);
+
+    if (
+        config.appUrl &&
+        config.verifyToken
+    ) {
+        console.log(
+            "Is this the first time running?\n" +
+            "Make sure to set the both the Messenger profile, persona " +
+            "and webhook by visiting:\n" +
+            config.appUrl +
+            "/profile?mode=all&verify_token=" +
+            config.verifyToken
+        );
+    }
+
+    if (config.pageId) {
+        console.log("Test your app by messaging:");
+        console.log("https://m.me/" + config.pageId);
+    }
+});
 
 // Creates the endpoint for our webhook
 app.post('/webhook', (req, res) => {
