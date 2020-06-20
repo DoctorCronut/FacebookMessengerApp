@@ -228,15 +228,15 @@ module.exports = class Receive {
         return nlp && nlp.entities && nlp.entities[name] && nlp.entities[name][0];
     }
 
-    
 
-    
+
+
 };
 
 function callSendAPI(requestBody) {
     request(
         {
-            uri: '${config.mPlatfom}/me/messages',
+            uri: '${config.mPlatformDomain}/me/messages',
             qs: {
                 access_token: config.pageAccessToken
             },
@@ -272,7 +272,7 @@ function callFBAEventsAPI(senderPsid, eventName) {
     // Send the HTTP request to the Activities API
     request(
         {
-            uri: '${config.mPlatfom}/${config.appId}/activities',
+            uri: '${config.mPlatformDomain}/${config.appId}/activities',
             method: "POST",
             form: requestBody
         },
