@@ -4,7 +4,7 @@ const
     express = require('express'),
     request = require('request'),
     // i18n = require("./i18n.config"),
-    User = require('./services/config'),
+    User = require('./services/user'),
     bodyParser = require('body-parser'),
     config = require("./services/config"),
     Receive = require("./services/receive"),
