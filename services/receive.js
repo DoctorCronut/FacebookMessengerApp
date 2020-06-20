@@ -73,8 +73,8 @@ module.exports = class Receive {
             response = [
                 Response.genText(
                     i18n.fallback.any, {
-                        message: this.webhookEvent.message.text
-                    })
+                    message: this.webhookEvent.message.text
+                }
                 ),
                 Response.genText(i18n.get_started.guidance),
                 Response.genQuickReply(i18m.__("get_started.help"), [
@@ -110,7 +110,7 @@ module.exports = class Receive {
                 title: i18n.menu.start_over,
                 payload: "GET_STARTED"
             }
-        ]);
+        ];
 
         return response;
     }
