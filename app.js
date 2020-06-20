@@ -9,6 +9,7 @@ const
     Receive = require("./services/receive"),
     app = express().use(bodyParser.json());
 
+var users = {};
 
 // Check if all environment variables are set
 config.checkEnvVariables();
@@ -59,8 +60,12 @@ app.post('/webhook', (req, res) => {
                 return;
             }
 
-            let receiveMessage = new Receive(users[sender_psid], webhook_event);
-            return receiveMessage.handleMessage();
+            if (!(sender_psid in users)) {
+                let user = new User(sender_psid);
+                let receiveMessage = new Receive(users[sender_psid], webhook_event);
+                return receiveMessage.handleMessage();
+            }
+
             // if (webhook_event.message)
             // {
             //     handleMessage(sender_psid, webhook_event.message);
