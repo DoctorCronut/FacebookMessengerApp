@@ -6,7 +6,7 @@ const
     // i18n = require("./i18n.config"),
     bodyParser = require('body-parser'),
     config = require("./services/config"),
-    Receive = require("./services/receive"),
+    // Receive = require("./services/receive"),
     app = express().use(bodyParser.json());
 
 
@@ -150,7 +150,7 @@ function callSendAPI(sender_psid, response) {
     // Send the HTTP request to the Messenger Platform
     request({
         "uri": "https://graph.facebook.com/v2.6/me/messages",
-        "qs": { "access_token": PAGE_ACCESS_TOKEN },
+        "qs": { "access_token": config.pageAccessToken },
         "method": "POST",
         "json": request_body
     }, (err, res, body) => {
