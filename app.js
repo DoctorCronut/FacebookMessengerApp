@@ -29,10 +29,10 @@ app.get('/webhook', (req, res) => {
 app.post('/webhook', (req, res) => {
 
     let body = req.body;
-
+    console.log("Statement 2 reached!")
     // Checks if this is an event from a page subscription
     if (body.object == 'page') {
-        console.log("Statement reached!")
+        console.log("Statement 3 reached!")
         res.status(200).send('EVENT_RECEIVED');
 
         body.entry.forEach(function (entry) {
