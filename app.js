@@ -6,7 +6,7 @@ const
     // i18n = require("./i18n.config"),
     bodyParser = require('body-parser'),
     config = require("./services/config"),
-    // Receive = require("./services/receive"),
+    Receive = require("./services/receive"),
     app = express().use(bodyParser.json());
 
 
