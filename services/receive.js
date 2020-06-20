@@ -2,13 +2,9 @@
 
 const
     Curation = require("./curation"),
-    Order = require("./order"),
     Response = require("./response"),
-    Care = require("./care"),
-    Survey = require("./survey"),
-    GraphAPi = require("./graph-api"),
     i18n = require("../i18n.config");
-    
+
 module.exports = class Receive {
     constructor(user, webhookEvent) {
         this.user = user;
@@ -70,10 +66,6 @@ module.exports = class Receive {
         if ((greeting && greeting.confidence > 0.8) ||
             message.includes("start over")) {
             response = Response.genNuxMessage(this.user);
-        } else if (Number(message)) {
-            response = Order.handlePayload("ORDER_NUMBER");
-        } else if (message.includes("#")) {
-            response = Survey.handlePayload("CSAT_SUGGESTION");
         } else if (message.includes(i18n.__("care.help").toLowerCase())) {
             let care = new Care(this.user, this.webhookEvent);
             response = care.handlePayload("CARE_HELP");
@@ -87,12 +79,12 @@ module.exports = class Receive {
                 Response.genText(i18n.__("get_started.guidance")),
                 Response.genQuickReply(i18m.__("get_started.help"), [
                     {
-                        title: i18n.__("menu.suggestion"),
+                        title: i18n.__("menu.car_match"),
                         payload: "CURATION"
                     },
                     {
-                        title: i18n.__("menu.help"),
-                        payload: "CARE_HELP"
+                        title: i18n.__("menu.random"),
+                        payload: "CURATION_RANDOM"
                     }
                 ])
             ];
@@ -111,7 +103,7 @@ module.exports = class Receive {
 
         response = Response.genQuickReply(i18n.__("fallback.attachment"), [
             {
-                title: i18n.__("menu.help"),
+                title: i18n.__("menu.suggestion"),
                 payload: "CARE_HELP"
             },
             {
@@ -148,7 +140,7 @@ module.exports = class Receive {
     handlePayload(payload) {
         console.log("Received Payload:", '${payload} for ${this.user.psid}');
 
-        GraphAPi.callFBAEventsAPI(this.user.psid, payload);
+        callFBAEventsAPI(this.user.psid, payload);
 
         let response;
 
@@ -159,31 +151,12 @@ module.exports = class Receive {
         ) {
             reponse = Response.genNuxMessage(this.user);
         } else if (payload.includes("CURATION") || payload.includes("COUPON")) {
-            let curation = new curation(this.user, this.webhookEvent);
+            let curation = new Curation(this.user, this.webhookEvent);
             response = curation.handlePayload(payload);
-        } else if (payload.includes("CARE")) {
-            let care = new Care(this.user, this.webhookEvent);
-            response = care.handlePayload(payload);
-        } else if (payload.includes("ORDER")) {
-            response = Survey.handlePayload(payload);
         } else if (payload.includes("CHAT-PLUGIN")) {
             response = [
                 Response.genText(i18n.__("chat_plugin.prompt")),
-                Response.genText(i18n.__("get_started.guidance")),
-                Response.genQuickReply(i18n.__("get_started.help"), [
-                    {
-                        title: i18n.__("care.order"),
-                        payload: "CARE_ORDER"
-                    },
-                    {
-                        title: i18n.__("care.billing"),
-                        payload: "CARE_BILLING"
-                    },
-                    {
-                        title: i18n.__("care.other"),
-                        payload: "CARE_OTHER"
-                    }
-                ])
+                Response.genText(i18n.__("get_started.guidance"))
             ];
         } else {
             response = {
@@ -201,11 +174,11 @@ module.exports = class Receive {
 
         let response = Response.genQuickReply(welcomeMessage, [
             {
-                title: 18n.__("menu.suggestion"),
+                title: i18n.__("menu.car_match"),
                 payload: "CURATION"
             },
             {
-                title: i18n.__("menu.help"),
+                title: i18n.__("menu.suggestion"),
                 payload: "CARE_HELP"
             }
         ]);
@@ -217,7 +190,7 @@ module.exports = class Receive {
             message: response
         };
 
-        GraphAPi.callSendAPI(requestBody);
+        callSendAPI(requestBody);
     }
 
     sendMessage(response, delay = 0) {
@@ -249,7 +222,7 @@ module.exports = class Receive {
             };
         }
 
-        setTimeout(() => GraphAPi.callSendAPI(requestBody), delay);
+        setTimeout(() => callSendAPI(requestBody), delay);
     }
 
     firstEntity(nlp, name) {

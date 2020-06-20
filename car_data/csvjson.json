@@ -1,0 +1,554 @@
+[
+  {
+    "Make": "Honda",
+    "Model": "Civic 2.0",
+    "Classification": "Compact",
+    "AveragePrice": 21000,
+    "0-60Time": 8.1,
+    "MPG": 15
+  },
+  {
+    "Make": "Honda",
+    "Model": "Civic 1.5T",
+    "Classification": "Compact",
+    "AveragePrice": 23000,
+    "0-60Time": 7.5,
+    "MPG": 15
+  },
+  {
+    "Make": "Honda",
+    "Model": "Civic Si",
+    "Classification": "Sport",
+    "AveragePrice": 26000,
+    "0-60Time": 6.7,
+    "MPG": 15
+  },
+  {
+    "Make": "Honda",
+    "Model": "Civic Type R",
+    "Classification": "Sport",
+    "AveragePrice": 38000,
+    "0-60Time": 5,
+    "MPG": 16
+  },
+  {
+    "Make": "Honda",
+    "Model": "Insight",
+    "Classification": "Compact",
+    "AveragePrice": 23500,
+    "0-60Time": 7.3,
+    "MPG": 17
+  },
+  {
+    "Make": "Honda",
+    "Model": "Accord 1.5T",
+    "Classification": "Midsized",
+    "AveragePrice": 25000,
+    "0-60Time": 6.6,
+    "MPG": 18
+  },
+  {
+    "Make": "Honda",
+    "Model": "Accord 2.0T",
+    "Classification": "Midsized",
+    "AveragePrice": 33000,
+    "0-60Time": 5.2,
+    "MPG": 18
+  },
+  {
+    "Make": "Honda",
+    "Model": "Accord Hybrid",
+    "Classification": "Midsized",
+    "AveragePrice": 26000,
+    "0-60Time": 7,
+    "MPG": 19
+  },
+  {
+    "Make": "Honda",
+    "Model": "Clarity",
+    "Classification": "Midsized",
+    "AveragePrice": 34500,
+    "0-60Time": 7.5,
+    "MPG": 19
+  },
+  {
+    "Make": "Honda",
+    "Model": "Fit",
+    "Classification": "Compact",
+    "AveragePrice": 17000,
+    "0-60Time": 8.6,
+    "MPG": 19
+  },
+  {
+    "Make": "Honda",
+    "Model": "HRV",
+    "Classification": "Compact",
+    "AveragePrice": 21500,
+    "0-60Time": 9.9,
+    "MPG": 20
+  },
+  {
+    "Make": "Honda",
+    "Model": "CRV",
+    "Classification": "Crossover",
+    "AveragePrice": 26500,
+    "0-60Time": 7.6,
+    "MPG": 22
+  },
+  {
+    "Make": "Honda",
+    "Model": "CRV Hybrid",
+    "Classification": "Crossover",
+    "AveragePrice": 29000,
+    "0-60Time": 7.9,
+    "MPG": 22
+  },
+  {
+    "Make": "Honda",
+    "Model": "Passport",
+    "Classification": "SUV",
+    "AveragePrice": 33000,
+    "0-60Time": 6.1,
+    "MPG": 22
+  },
+  {
+    "Make": "Honda",
+    "Model": "Pilot",
+    "Classification": "SUV",
+    "AveragePrice": 33000,
+    "0-60Time": 6.2,
+    "MPG": 22
+  },
+  {
+    "Make": "Honda",
+    "Model": "Odyssey",
+    "Classification": "MInivan",
+    "AveragePrice": 32000,
+    "0-60Time": 6.7,
+    "MPG": 23
+  },
+  {
+    "Make": "Honda",
+    "Model": "Ridgeline",
+    "Classification": "Truck",
+    "AveragePrice": 35000,
+    "0-60Time": 6.9,
+    "MPG": 23
+  },
+  {
+    "Make": "Toyota",
+    "Model": "Yaris",
+    "Classification": "Compact",
+    "AveragePrice": 16000,
+    "0-60Time": 9.5,
+    "MPG": 24
+  },
+  {
+    "Make": "Toyota",
+    "Model": "Corolla",
+    "Classification": "Compact",
+    "AveragePrice": 20000,
+    "0-60Time": 8.2,
+    "MPG": 24
+  },
+  {
+    "Make": "Toyota",
+    "Model": "Corolla Hybrid",
+    "Classification": "Compact",
+    "AveragePrice": 23500,
+    "0-60Time": 10.5,
+    "MPG": 24
+  },
+  {
+    "Make": "Toyota",
+    "Model": "Camry 2.5L",
+    "Classification": "Midsized",
+    "AveragePrice": 27000,
+    "0-60Time": 7.7,
+    "MPG": 24
+  },
+  {
+    "Make": "Toyota",
+    "Model": "Camry 3.5L",
+    "Classification": "Midsized",
+    "AveragePrice": 33000,
+    "0-60Time": 5.9,
+    "MPG": 24
+  },
+  {
+    "Make": "Toyota",
+    "Model": "Camry Hybrid",
+    "Classification": "Midsized",
+    "AveragePrice": 28000,
+    "0-60Time": 7.3,
+    "MPG": 24
+  },
+  {
+    "Make": "Toyota",
+    "Model": "Prius",
+    "Classification": "Compact",
+    "AveragePrice": 25000,
+    "0-60Time": 11.2,
+    "MPG": 25
+  },
+  {
+    "Make": "Toyota",
+    "Model": "Prius Prime",
+    "Classification": "Compact",
+    "AveragePrice": 28500,
+    "0-60Time": 10.1,
+    "MPG": 25
+  },
+  {
+    "Make": "Toyota",
+    "Model": "Avalon",
+    "Classification": "Fullsized",
+    "AveragePrice": 36500,
+    "0-60Time": 6,
+    "MPG": 25
+  },
+  {
+    "Make": "Toyota",
+    "Model": "Avalon Hybrid",
+    "Classification": "Fullsized",
+    "AveragePrice": 37500,
+    "0-60Time": 7.8,
+    "MPG": 25
+  },
+  {
+    "Make": "Toyota",
+    "Model": "Mirai",
+    "Classification": "Midsized",
+    "AveragePrice": 60000,
+    "0-60Time": 8.7,
+    "MPG": 25
+  },
+  {
+    "Make": "Toyota",
+    "Model": "GT86",
+    "Classification": "Sport",
+    "AveragePrice": 27500,
+    "0-60Time": 6.8,
+    "MPG": 27
+  },
+  {
+    "Make": "Toyota",
+    "Model": "GR Supra",
+    "Classification": "Sport",
+    "AveragePrice": 51000,
+    "0-60Time": 3.8,
+    "MPG": 27
+  },
+  {
+    "Make": "Toyota",
+    "Model": "Sienna",
+    "Classification": "Minivan",
+    "AveragePrice": 33000,
+    "0-60Time": 7,
+    "MPG": 27
+  },
+  {
+    "Make": "Toyota",
+    "Model": "Tacoma",
+    "Classification": "Truck",
+    "AveragePrice": 27000,
+    "0-60Time": 7.7,
+    "MPG": 28
+  },
+  {
+    "Make": "Toyota",
+    "Model": "Tundra",
+    "Classification": "Truck",
+    "AveragePrice": 34500,
+    "0-60Time": 6.5,
+    "MPG": 28
+  },
+  {
+    "Make": "Toyota",
+    "Model": "C-HR",
+    "Classification": "Compact",
+    "AveragePrice": 22000,
+    "0-60Time": 10.3,
+    "MPG": 28
+  },
+  {
+    "Make": "Toyota",
+    "Model": "RAV4",
+    "Classification": "Crossover",
+    "AveragePrice": 26000,
+    "0-60Time": 8.2,
+    "MPG": 29
+  },
+  {
+    "Make": "Toyota",
+    "Model": "RAV4 Hybrid",
+    "Classification": "Crossover",
+    "AveragePrice": 29000,
+    "0-60Time": 7.4,
+    "MPG": 29
+  },
+  {
+    "Make": "Toyota",
+    "Model": "Highlander",
+    "Classification": "SUV",
+    "AveragePrice": 35000,
+    "0-60Time": 6.9,
+    "MPG": 29
+  },
+  {
+    "Make": "Toyota",
+    "Model": "Highlander Hybrid",
+    "Classification": "SUV",
+    "AveragePrice": 39000,
+    "0-60Time": 7,
+    "MPG": 30
+  },
+  {
+    "Make": "Toyota",
+    "Model": "4Runner",
+    "Classification": "SUV",
+    "AveragePrice": 36500,
+    "0-60Time": 7.6,
+    "MPG": 30
+  },
+  {
+    "Make": "Toyota",
+    "Model": "Sequoia",
+    "Classification": "SUV",
+    "AveragePrice": 50000,
+    "0-60Time": 6.7,
+    "MPG": 31
+  },
+  {
+    "Make": "Toyota",
+    "Model": "Land Cruiser",
+    "Classification": "SUV",
+    "AveragePrice": 86000,
+    "0-60Time": 6.7,
+    "MPG": 31
+  },
+  {
+    "Make": "Nissan",
+    "Model": "Versa",
+    "Classification": "Compact",
+    "AveragePrice": 15500,
+    "0-60Time": 10,
+    "MPG": 31
+  },
+  {
+    "Make": "Nissan",
+    "Model": "Sentra",
+    "Classification": "Compact",
+    "AveragePrice": 20000,
+    "0-60Time": 8.3,
+    "MPG": 32
+  },
+  {
+    "Make": "Nissan",
+    "Model": "Altima",
+    "Classification": "Midsized",
+    "AveragePrice": 25000,
+    "0-60Time": 7.4,
+    "MPG": 32
+  },
+  {
+    "Make": "Nissan",
+    "Model": "Maxima",
+    "Classification": "Fullsized",
+    "AveragePrice": 35000,
+    "0-60Time": 5.8,
+    "MPG": 32
+  },
+  {
+    "Make": "Nissan",
+    "Model": "Leaf",
+    "Classification": "Compact",
+    "AveragePrice": 32000,
+    "0-60Time": 6.8,
+    "MPG": 32
+  },
+  {
+    "Make": "Nissan",
+    "Model": "Kicks",
+    "Classification": "Compact",
+    "AveragePrice": 19500,
+    "0-60Time": 9.7,
+    "MPG": 33
+  },
+  {
+    "Make": "Nissan",
+    "Model": "Rouge",
+    "Classification": "Crossover",
+    "AveragePrice": 24000,
+    "0-60Time": 9.4,
+    "MPG": 34
+  },
+  {
+    "Make": "Nissan",
+    "Model": "Murano",
+    "Classification": "Crossover",
+    "AveragePrice": 32000,
+    "0-60Time": 7.3,
+    "MPG": 34
+  },
+  {
+    "Make": "Nissan",
+    "Model": "Pathfinder",
+    "Classification": "SUV",
+    "AveragePrice": 32000,
+    "0-60Time": 7.4,
+    "MPG": 34
+  },
+  {
+    "Make": "Nissan",
+    "Model": "Armada",
+    "Classification": "SUV",
+    "AveragePrice": 48000,
+    "0-60Time": 6.1,
+    "MPG": 34
+  },
+  {
+    "Make": "Nissan",
+    "Model": "Frontier",
+    "Classification": "Truck",
+    "AveragePrice": 20000,
+    "0-60Time": 7.3,
+    "MPG": 35
+  },
+  {
+    "Make": "Nissan",
+    "Model": "Titan",
+    "Classification": "Truck",
+    "AveragePrice": 37000,
+    "0-60Time": 6.5,
+    "MPG": 35
+  },
+  {
+    "Make": "Nissan",
+    "Model": "Titan XD",
+    "Classification": "Truck",
+    "AveragePrice": 45000,
+    "0-60Time": 7.4,
+    "MPG": 35
+  },
+  {
+    "Make": "Nissan",
+    "Model": "370Z Nismo",
+    "Classification": "Sport",
+    "AveragePrice": 46000,
+    "0-60Time": 4.9,
+    "MPG": 35
+  },
+  {
+    "Make": "Nissan",
+    "Model": "370Z",
+    "Classification": "Sport",
+    "AveragePrice": 36000,
+    "0-60Time": 5.2,
+    "MPG": 35
+  },
+  {
+    "Make": "Nissan",
+    "Model": "GTR Nismo",
+    "Classification": "Sport",
+    "AveragePrice": 220000,
+    "0-60Time": 2.7,
+    "MPG": 36
+  },
+  {
+    "Make": "Nissan",
+    "Model": "GTR",
+    "Classification": "Sport",
+    "AveragePrice": 130000,
+    "0-60Time": 2.9,
+    "MPG": 38
+  },
+  {
+    "Make": "Subaru",
+    "Model": "Impreza",
+    "Classification": "Compact",
+    "AveragePrice": 21000,
+    "0-60Time": 9,
+    "MPG": 40
+  },
+  {
+    "Make": "Subaru",
+    "Model": "Legacy 2.5",
+    "Classification": "Midsized",
+    "AveragePrice": 25000,
+    "0-60Time": 8,
+    "MPG": 44
+  },
+  {
+    "Make": "Subaru",
+    "Model": "Legacy 2.4T",
+    "Classification": "Midsized",
+    "AveragePrice": 35000,
+    "0-60Time": 6.1,
+    "MPG": 47
+  },
+  {
+    "Make": "Subaru",
+    "Model": "Crosstrek",
+    "Classification": "Crossover",
+    "AveragePrice": 24000,
+    "0-60Time": 9.5,
+    "MPG": 48
+  },
+  {
+    "Make": "Subaru",
+    "Model": "Forester",
+    "Classification": "SUV",
+    "AveragePrice": 30000,
+    "0-60Time": 8.4,
+    "MPG": 52
+  },
+  {
+    "Make": "Subaru",
+    "Model": "Outback 2.5",
+    "Classification": "Crossover",
+    "AveragePrice": 35000,
+    "0-60Time": 8.7,
+    "MPG": 52
+  },
+  {
+    "Make": "Subaru",
+    "Model": "Outback 2.4T",
+    "Classification": "Crossover",
+    "AveragePrice": 39000,
+    "0-60Time": 6.3,
+    "MPG": 52
+  },
+  {
+    "Make": "Subaru",
+    "Model": "Ascent",
+    "Classification": "SUV",
+    "AveragePrice": 40000,
+    "0-60Time": 6.9,
+    "MPG": 53
+  },
+  {
+    "Make": "Subaru",
+    "Model": "BRZ",
+    "Classification": "Sport",
+    "AveragePrice": 30000,
+    "0-60Time": 6.2,
+    "MPG": 54
+  },
+  {
+    "Make": "Subaru",
+    "Model": "WRX",
+    "Classification": "Sport",
+    "AveragePrice": 29000,
+    "0-60Time": 5.5,
+    "MPG": 67
+  },
+  {
+    "Make": "Subaru",
+    "Model": "WRX STI",
+    "Classification": "Sport",
+    "AveragePrice": 40000,
+    "0-60Time": 5,
+    "MPG": "Electric"
+  }
+]
