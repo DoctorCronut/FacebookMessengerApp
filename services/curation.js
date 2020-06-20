@@ -19,13 +19,12 @@ module.exports = class Curation {
                 response = [
                     Response.genText(
                         i18nleadgen.promo, {
-                            userFirstName: this.user.userFirstName
-                        })
-                    )
+                        userFirstName: this.user.userFirstName
+                    })
                 ];
                 break;
             case "CURATION":
-                response = Response.genQuickReply(i18n.curation.brand), [
+                response = Response.genQuickReply(i18n.curation.brand, [
                     {
                         title: i18n.curation.brands[0],
                         payload: "CURATION_BRANDS"
@@ -42,6 +41,7 @@ module.exports = class Curation {
                         title: i18n.curation.brands[3],
                         payload: "CURATION_BRANDS"
                     }
+                
                 ]);
                 break;
             case "CURATION_BRANDS":
@@ -139,10 +139,10 @@ module.exports = class Curation {
             case "CURATION_RESULT":
                 response = this.genCurationResponse(payload);
                 break;
-            
+
             case "CURATION_RANDOM":
                 response = this.randomModel();
-                break; 
+                break;
         }
         return response;
     }

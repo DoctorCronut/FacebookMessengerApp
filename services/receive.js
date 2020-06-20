@@ -101,7 +101,7 @@ module.exports = class Receive {
         let attachment = this.webhookEvent.message.attachments[0];
         console.log("Received attachment:", `${attachment} for ${this.user.psid}`);
 
-        response = Response.genQuickReply(i18n.fallback.attachment), [
+        response = Response.genQuickReply(i18n.fallback.attachment, [
             {
                 title: i18n.menu.suggestion,
                 payload: "CARE_HELP"
@@ -110,7 +110,7 @@ module.exports = class Receive {
                 title: i18n.menu.start_over,
                 payload: "GET_STARTED"
             }
-        ];
+        ]);
 
         return response;
     }
