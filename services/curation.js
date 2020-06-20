@@ -3,7 +3,7 @@
 const Response = require("./response"),
     config = require("./config"),
     car_data = require("../car_data/csvjson.json"),
-    i18n = require("../i18n.config");
+    i18n = require("../locales/en_US.json");
 
 module.exports = class Curation {
     constructor(user, webhookEvent) {
@@ -18,120 +18,120 @@ module.exports = class Curation {
             case "PROMO":
                 response = [
                     Response.genText(
-                        i18n.__("leadgen.promo", {
+                        i18nleadgen.promo, {
                             userFirstName: this.user.userFirstName
                         })
                     )
                 ];
                 break;
             case "CURATION":
-                response = Response.genQuickReply(i18n.__("curation.brand"), [
+                response = Response.genQuickReply(i18n.curation.brand), [
                     {
-                        title: i18n.__("curation.brands[0]"),
+                        title: i18n.curation.brands[0],
                         payload: "CURATION_BRANDS"
                     },
                     {
-                        title: i18n.__("curation.brands[1]"),
+                        title: i18n.curation.brands[1],
                         payload: "CURATION_BRANDS"
                     },
                     {
-                        title: i18n.__("curation.brands[2]"),
+                        title: i18n.curation.brands[2],
                         payload: "CURATION_BRANDS"
                     },
                     {
-                        title: i18n.__("curation.brands[3]"),
+                        title: i18n.curation.brands[3],
                         payload: "CURATION_BRANDS"
                     }
                 ]);
                 break;
             case "CURATION_BRANDS":
-                response = Response.genQuickReply(i18n.__("curation.class"), [
+                response = Response.genQuickReply(i18n.curation.class, [
                     {
-                        title: i18n.__("curation.classes[0]"),
+                        title: i18n.curation.classes[0],
                         payload: "CURATION_FOR_CLASSES"
                     },
                     {
-                        title: i18n.__("curation.classes[1]"),
+                        title: i18n.curation.classes[1],
                         payload: "CURATION_FOR_CLASSES"
                     },
                     {
-                        title: i18n.__("curation.classes[2]"),
+                        title: i18n.curation.classes[2],
                         payload: "CURATION_FOR_CLASSES"
                     },
                     {
-                        title: i18n.__("curation.classes[3]"),
+                        title: i18n.curation.classes[3],
                         payload: "CURATION_FOR_CLASSES"
                     },
                     {
-                        title: i18n.__("curation.classes[4]"),
+                        title: i18n.curation.classes[4],
                         payload: "CURATION_FOR_CLASSES"
                     },
                     {
-                        title: i18n.__("curation.classes[5]"),
+                        title: i18n.curation.classes[5],
                         payload: "CURATION_FOR_CLASSES"
                     },
                     {
-                        title: i18n.__("curation.classes[6]"),
+                        title: i18n.curation.classes[6],
                         payload: "CURATION_FOR_CLASSES"
                     }
                 ]);
                 break;
             case "CURATION_FOR_CLASSES":
-                response = Response.genQuickReply(i18n.__("curation.price_range"), [
+                response = Response.genQuickReply(i18n.curation.price_range, [
                     {
-                        title: i18n.__("curation.prices[0]"),
+                        title: i18n.curation.prices[0],
                         payload: "CURATION_PRICES"
                     },
                     {
-                        title: i18n__("curation.prices[1]"),
+                        title: i18n.curation.prices[1],
                         payload: "CURATION_PRICES"
                     },
                     {
-                        title: i18n__("curation.prices[2]"),
+                        title: i18n.curation.prices[2],
                         payload: "CURATION_PRICES"
                     },
                     {
-                        title: i18n__("curation.prices[3]"),
+                        title: i18n.curation.prices[3],
                         payload: "CURATION_PRICES"
                     }
                 ]);
                 break;
             case "CURATION_PRICES":
-                response = Response.genQuickReply(i18n.__("curation.speed"), [
+                response = Response.genQuickReply(i18n.curation.speed, [
                     {
-                        title: i18n.__("curation.spd_range[0]"),
+                        title: i18n.curation.spd_range[0],
                         payload: "CURATION_SPEED"
                     },
                     {
-                        title: i18n.__("curation.spd_range[1]"),
+                        title: i18n.curation.spd_range[1],
                         payload: "CURATION_SPEED"
                     },
                     {
-                        title: i18n.__("curation.spd_range[2]"),
+                        title: i18n.curation.spd_range[2],
                         payload: "CURATION_SPEED"
                     }
                 ]);
                 break;
             case "CURATION_SPEED":
-                response = Response.genQuickReply(i18n.__("curation.miles"), [
+                response = Response.genQuickReply(i18n.curation.miles, [
                     {
-                        title: i18n.__("curation.mpg_range[0]"),
+                        title: i18n.curation.mpg_range[0],
                         payload: "CURATION_RESULT"
                     },
                     {
-                        title: i18n.__("curation.mpg_range[1]"),
+                        title: i18n.curation.mpg_range[1],
                         payload: "CURATION_RESULT"
                     },
                     {
-                        title: i18n.__("curation.mpg_range[2]"),
+                        title: i18n.curation.mpg_range[2],
                         payload: "CURATION_RESULT"
                     },
                     {
-                        title: i18n.__("curation.mpg_range[3]"),
+                        title: i18n.curation.mpg_range[3],
                         payload: "CURATION_RESULT"
                     },
                     {
-                        title: i18n.__("curation.mpg_range[4]"),
+                        title: i18n.curation.mpg_range[4],
                         payload: "CURATION_RESULT"
                     }
                 ]);
@@ -154,18 +154,18 @@ module.exports = class Curation {
 
         let buttons = [
             Response.genWebUrlButton(
-                i18n.__("curation.shop"),
+                i18n.curation.shop,
                 `${config.shopUrl}/products/${outfit}`
             ),
             Response.genPostbackButton(
-                i18n.__("curation.show"),
+                i18n.curation.show,
                 "CURATION_OTHER_STYLE"
             )
         ];
 
         if (budget === "50") {
             buttons.push(
-                Response.genPostbackButton(i18n.__("curation.sales"), "CARE_SALES")
+                Response.genPostbackButton(curation.sales, "CARE_SALES")
             );
         }
 

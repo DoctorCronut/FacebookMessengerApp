@@ -3,7 +3,7 @@
 const
     Curation = require("./curation"),
     Response = require("./response"),
-    i18n = require("../i18n.config");
+    i18n = require("../locales/en_US.json");
 
 module.exports = class Receive {
     constructor(user, webhookEvent) {
@@ -66,24 +66,24 @@ module.exports = class Receive {
         if ((greeting && greeting.confidence > 0.8) ||
             message.includes("start over")) {
             response = Response.genNuxMessage(this.user);
-        } else if (message.includes(i18n.__("care.help").toLowerCase())) {
+        } else if (message.includes(i18n.care.help).toLowerCase()) {
             let care = new Care(this.user, this.webhookEvent);
             response = care.handlePayload("CARE_HELP");
         } else {
             response = [
                 Response.genText(
-                    i18n.__("fallback.any", {
+                    i18n.fallback.any, {
                         message: this.webhookEvent.message.text
                     })
                 ),
-                Response.genText(i18n.__("get_started.guidance")),
+                Response.genText(i18n.get_started.guidance),
                 Response.genQuickReply(i18m.__("get_started.help"), [
                     {
-                        title: i18n.__("menu.car_match"),
+                        title: i18n.menu.car_match,
                         payload: "CURATION"
                     },
                     {
-                        title: i18n.__("menu.random"),
+                        title: i18n.menu.random,
                         payload: "CURATION_RANDOM"
                     }
                 ])
@@ -101,13 +101,13 @@ module.exports = class Receive {
         let attachment = this.webhookEvent.message.attachments[0];
         console.log("Received attachment:", `${attachment} for ${this.user.psid}`);
 
-        response = Response.genQuickReply(i18n.__("fallback.attachment"), [
+        response = Response.genQuickReply(i18n.fallback.attachment), [
             {
-                title: i18n.__("menu.suggestion"),
+                title: i18n.menu.suggestion,
                 payload: "CARE_HELP"
             },
             {
-                title: i18n.__("menu.start_over"),
+                title: i18n.menu.start_over,
                 payload: "GET_STARTED"
             }
         ]);
@@ -155,8 +155,8 @@ module.exports = class Receive {
             response = curation.handlePayload(payload);
         } else if (payload.includes("CHAT-PLUGIN")) {
             response = [
-                Response.genText(i18n.__("chat_plugin.prompt")),
-                Response.genText(i18n.__("get_started.guidance"))
+                Response.genText(i18n.chat_plugin.prompt),
+                Response.genText(i18n.get_started.guidance)
             ];
         } else {
             response = {
@@ -168,17 +168,17 @@ module.exports = class Receive {
     }
 
     handlePrivateReply(type, object_id) {
-        let welcomeMessage = i18n.__("get_started.welcome") + " " +
-            i18n.__("get_started.guidance") + ". " +
-            i18n.__("get_started.help");
+        let welcomeMessage = i18n.get_started.welcome + " " +
+            i18n.get_started.guidance + ". " +
+            i18n.get_started.help;
 
         let response = Response.genQuickReply(welcomeMessage, [
             {
-                title: i18n.__("menu.car_match"),
+                title: i18n.menu.car_match,
                 payload: "CURATION"
             },
             {
-                title: i18n.__("menu.suggestion"),
+                title: i18n.menu.suggestion,
                 payload: "CARE_HELP"
             }
         ]);
