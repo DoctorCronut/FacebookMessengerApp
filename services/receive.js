@@ -3,6 +3,7 @@
 const
     Curation = require("./curation"),
     Response = require("./response"),
+    request = require("request"),
     i18n = require("../locales/en_US.json");
 
 module.exports = class Receive {
