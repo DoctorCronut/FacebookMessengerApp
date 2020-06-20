@@ -22,6 +22,7 @@ module.exports = {
     pageAccessToken: process.env.PAGE_ACCESS_TOKEN,
     appSecret: process.env.APP_SECRET,
     verifyToken: process.env.VERIFY_TOKEN,
+    port: process.env.PORT || 1337,
 
     // URL of your app domain
     appUrl: process.env.APP_URL,
