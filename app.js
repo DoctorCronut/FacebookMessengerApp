@@ -2,7 +2,7 @@
 
 const
     express = require('express'),
-    i18n = require("./i18n.config"),
+    // i18n = require("./i18n.config"),
     bodyParser = require('body-parser'),
     config = require("./services/config"),
     Receive = require("./services/receive"),
