@@ -1,5 +1,7 @@
 'use strict';
 
+const e = require('express');
+
 const
     express = require('express'),
     request = require('request'),
@@ -63,6 +65,10 @@ app.post('/webhook', (req, res) => {
 
             if (!(sender_psid in users)) {
                 let user = new User(sender_psid);
+                users[sender_psid] = user;
+                let receiveMessage = new Receive(users[sender_psid], webhook_event);
+                return receiveMessage.handleMessage();
+            } else {
                 let receiveMessage = new Receive(users[sender_psid], webhook_event);
                 return receiveMessage.handleMessage();
             }
