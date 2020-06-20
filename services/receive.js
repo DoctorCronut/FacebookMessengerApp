@@ -227,23 +227,7 @@ module.exports = class Receive {
         return nlp && nlp.entities && nlp.entities[name] && nlp.entities[name][0];
     }
 
-    static callSendAPI(requestBody) {
-        request(
-            {
-                uri: '${config.mPlatfom}/me/messages',
-                qs: {
-                    access_token: config.pageAccessToken
-                },
-                method: "POST",
-                json: requestBody
-            },
-            error => {
-                if (error) {
-                    console.error("Unable to send message:", error);
-                }
-            }
-        );
-    }
+    
 
     static callFBAEventsAPI(senderPsid, eventName) {
         // Construct the message body
@@ -280,3 +264,21 @@ module.exports = class Receive {
         );
     }
 };
+
+function callSendAPI(requestBody) {
+    request(
+        {
+            uri: '${config.mPlatfom}/me/messages',
+            qs: {
+                access_token: config.pageAccessToken
+            },
+            method: "POST",
+            json: requestBody
+        },
+        error => {
+            if (error) {
+                console.error("Unable to send message:", error);
+            }
+        }
+    );
+}
