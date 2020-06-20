@@ -75,7 +75,7 @@ module.exports = class Receive {
                 }
                 ),
                 Response.genText(i18n.get_started.guidance),
-                Response.genQuickReply(i18m.__("get_started.help"), [
+                Response.genQuickReply(i18n.get_started.help, [
                     {
                         title: i18n.menu.car_match,
                         payload: "CURATION"
