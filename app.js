@@ -13,7 +13,7 @@ const
 config.checkEnvVariables();
 
 // listen for requests :)
-app.listen(config.port, function () {
+var listener = app.listen(config.port, function () {
     console.log("Your app is listening on port " + listener.address().port);
 
     if (
