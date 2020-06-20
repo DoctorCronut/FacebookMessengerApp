@@ -10,7 +10,7 @@ const
     app = express().use(bodyParser.json()); // creates express http server
 
 // Sets server port and logs message on success
-var listener = app.listen(config.port, function () {
+var listener = app.listen(process.env.PORT || 1337, function () {
     console.log("Your app is listening on port " + listener.address().port);
 
     if (
