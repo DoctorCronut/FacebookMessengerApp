@@ -220,7 +220,7 @@ module.exports = class Receive {
             };
         }
 
-        setTimeout(() => this.callSendAPI(requestBody), delay);
+        setTimeout(() => callSendAPI(requestBody), delay);
     }
 
     firstEntity(nlp, name) {
