@@ -41,7 +41,7 @@ module.exports = class Curation {
                         title: i18n.curation.brands[3],
                         payload: "CURATION_BRANDS"
                     }
-                
+
                 ]);
                 break;
             case "CURATION_BRANDS":

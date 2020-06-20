@@ -1,40 +1,68 @@
 {
-    "profile": {
-      "greeting": "Welcome to Japanese Car Match {{user_first_name}}! Click get started to enjoy our sample automated messaging experience. If you want to build a similar one visit https://fb.me/get-sample-oc"
-    },
-    "menu": {
-      "car_match": "Find a Car",
-      "random": "Random Car",
-      "suggestion": "Popular Cars",
-      "start_over": "Start over"
-    },
-    "get_started": {
-      "welcome": "Hi {{userFirstName}}! Welcome to Japanese Car Match!",
-      "guidance": "At any time, use the menu below to navigate through the features",
-      "help": "What we can do to help you today?"
-    },
-    "leadgen": {
-      "promo": "Hi {{userFirstName}}, finding japanese cars is now easier and more convenient.",
-    },
-    "curation": {
-      "class": "What class of car are you looking for?",
-      "price_range": "Great! Let's get started. First, is there a price range in mind?",
-      "miles": "What is your preferred miles per gallon?",
-      "speed": "What is your preferred 0-60 speed?",
-      "brand": "What is your preferred brand?",
-      "classes": ["SUV", "Compact", "Midsized", "Crossover", "Truck", "Sport", "Minivan"],
-      "prices": ["15k - 25k", "25k - 35k", "35k - 45k", "45k and up"],
-      "brands": ["Honda", "Toyota", "Nissan", "Subaru"],
-      "spd_range": ["2.5s - 6.25s", "6.25s - 10s", "10s and up"],
-      "mpg_range": ["15 - 28.75", "28.75 - 42.5", "42.5-56.25", "56.25-70", "electric"],
-      "title": "Summer collection 2019",
-      "subtitle": "Featured outfit",
-      "show": "Another model"
-    },
-    "chat_plugin": {
-      "prompt": "Thanks for using Japanese Car Match."
-    },
-    "fallback": {
-      "any": "Sorry, but I don’t recognize \"{{message}}\".",
-    }
+  "profile": {
+    "greeting": "Welcome to Japanese Car Match {{user_first_name}}! Click get started to enjoy our sample automated messaging experience. If you want to build a similar one visit https://fb.me/get-sample-oc"
+  },
+  "menu": {
+    "car_match": "Find a Car",
+    "random": "Random Car",
+    "suggestion": "Popular Cars",
+    "start_over": "Start over"
+  },
+  "get_started": {
+    "welcome": "Hi {{userFirstName}}! Welcome to Japanese Car Match!",
+    "guidance": "At any time, use the menu below to navigate through the features",
+    "help": "What we can do to help you today?"
+  },
+  "leadgen": {
+    "promo": "Hi {{userFirstName}}, finding japanese cars is now easier and more convenient."
+  },
+  "curation": {
+    "class": "What class of car are you looking for?",
+    "price_range": "Great! Let's get started. First, is there a price range in mind?",
+    "miles": "What is your preferred miles per gallon?",
+    "speed": "What is your preferred 0-60 speed?",
+    "brand": "What is your preferred brand?",
+    "classes": [
+      "SUV",
+      "Compact",
+      "Midsized",
+      "Crossover",
+      "Truck",
+      "Sport",
+      "Minivan"
+    ],
+    "prices": [
+      "15k - 25k",
+      "25k - 35k",
+      "35k - 45k",
+      "45k and up"
+    ],
+    "brands": [
+      "Honda",
+      "Toyota",
+      "Nissan",
+      "Subaru"
+    ],
+    "spd_range": [
+      "2.5s - 6.25s",
+      "6.25s - 10s",
+      "10s and up"
+    ],
+    "mpg_range": [
+      "15 - 28.75",
+      "28.75 - 42.5",
+      "42.5-56.25",
+      "56.25-70",
+      "electric"
+    ],
+    "title": "Summer collection 2019",
+    "subtitle": "Featured outfit",
+    "show": "Another model"
+  },
+  "chat_plugin": {
+    "prompt": "Thanks for using Japanese Car Match."
+  },
+  "fallback": {
+    "any": "Sorry, but I don’t recognize \"{{message}}\"."
   }
+}
