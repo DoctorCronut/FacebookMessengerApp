@@ -6,6 +6,7 @@ const request = require('request');
 // Imports dependencies and set up http server
 const
     express = require('express'),
+    config = require('./services/config'),
     bodyParser = require('body-parser'),
     app = express().use(bodyParser.json()); // creates express http server
 
