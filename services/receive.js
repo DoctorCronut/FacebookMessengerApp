@@ -232,7 +232,7 @@ module.exports = class Receive {
             {
                 uri: '${config.mPlatfom}/me/messages',
                 qs: {
-                    access_token: config.pageAccesToken
+                    access_token: config.pageAccessToken
                 },
                 method: "POST",
                 json: requestBody
