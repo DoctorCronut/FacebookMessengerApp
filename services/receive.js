@@ -66,9 +66,6 @@ module.exports = class Receive {
         if ((greeting && greeting.confidence > 0.8) ||
             message.includes("start over")) {
             response = Response.genNuxMessage(this.user);
-        } else if (message.includes(i18n.care.help).toLowerCase()) {
-            let care = new Care(this.user, this.webhookEvent);
-            response = care.handlePayload("CARE_HELP");
         } else {
             response = [
                 Response.genText(
@@ -227,5 +224,23 @@ module.exports = class Receive {
 
     firstEntity(nlp, name) {
         return nlp && nlp.entities && nlp.entities[name] && nlp.entities[name][0];
+    }
+
+    callSendAPI(requestBody) {
+        request(
+            {
+                uri: `${config.mPlatfom}/me/messages`,
+                qs: {
+                    access_token: config.pageAccesToken
+                },
+                method: "POST",
+                json: requestBody
+            },
+            error => {
+                if (error) {
+                    console.error("Unable to send message:", error);
+                }
+            }
+        );
     }
 };

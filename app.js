@@ -50,16 +50,16 @@ app.post('/webhook', (req, res) => {
             let sender_psid = webhook_event.sender.id;
             console.log('Sender PSID: ' + sender_psid);
 
-            // if ("read" in webhook_event) {
-            //     return;
-            // }
+            if ("read" in webhook_event) {
+                return;
+            }
 
-            // if ("delivery" in webhook_event) {
-            //     return;
-            // }
+            if ("delivery" in webhook_event) {
+                return;
+            }
 
-            // let receiveMessage = new Receive(users[sender_psid], webhook_event);
-            // return receiveMessage.handleMessage();
+            let receiveMessage = new Receive(users[sender_psid], webhook_event);
+            return receiveMessage.handleMessage();
         });
 
         res.status(200).send('EVENT_RECEIVED');
