@@ -234,9 +234,10 @@ module.exports = class Receive {
 };
 
 function callSendAPI(requestBody) {
+    let domain = config.mPlatformDomain;
     request(
         {
-            uri: '${config.mPlatformDomain}/me/messages',
+            uri: domain + '/me/messages',
             qs: {
                 access_token: config.pageAccessToken
             },
@@ -253,6 +254,8 @@ function callSendAPI(requestBody) {
 
 function callFBAEventsAPI(senderPsid, eventName) {
     // Construct the message body
+    let domain = config.mPlatformDomain;
+    let appId = config.appId;
     let requestBody = {
         event: "CUSTOM_APP_EVENTS",
         custom_events: JSON.stringify([
@@ -272,7 +275,7 @@ function callFBAEventsAPI(senderPsid, eventName) {
     // Send the HTTP request to the Activities API
     request(
         {
-            uri: '${config.mPlatformDomain}/${config.appId}/activities',
+            uri: domain + '/' + appId + '/activities',
             method: "POST",
             form: requestBody
         },
