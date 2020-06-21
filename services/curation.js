@@ -142,6 +142,7 @@ module.exports = class Curation {
                 break;
 
             case "CURATION_RANDOM":
+                console.log("reached");
                 model = `${this.randomModel()}`;
                 let buttons = [
                     Response.genPostbackButton(
