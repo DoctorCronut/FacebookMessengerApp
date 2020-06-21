@@ -143,7 +143,8 @@ module.exports = class Curation {
 
             case "CURATION_RANDOM":
                 console.log("reached");
-                model = `${this.randomModel()}`;
+                model = this.randomModel();
+                model_str = `Model: ${model.Model}`;
                 let buttons = [
                     Response.genPostbackButton(
                         "Yes",
@@ -156,7 +157,7 @@ module.exports = class Curation {
                 ]
                 response = Response.genGenericTemplate(
                     "../assets/subaru_img.jpg",
-                    model,
+                    model_str,
                     i18n.subtitle,
                     buttons
                 );
