@@ -109,20 +109,19 @@ module.exports = class Response {
 
     static genNuxMessage(user) {
         let welcome = this.genText(
-            i18n.get_started.welcome, {
-            userFirstName: user.firstName
-        });
+            `Hi ${user.firstName}! Welcome to Japanese Car Match!`,
+        );
 
         let guide = this.genText(i18n.get_started.guidance);
 
         let curation = this.genQuickReply(i18n.get_started.help, [
             {
-                title: i18n.menu.suggestion,
+                title: i18n.menu.car_match,
                 payload: "CURATION"
             },
             {
-                title: i18n.menu.help,
-                payload: "CARE_HELP"
+                title: i18n.menu.random,
+                payload: "CARE_RANDOM"
             }
         ]);
 
