@@ -153,7 +153,7 @@ module.exports = class Curation {
                         "CURATION_RANDOM"
                     )
                 ]
-                let response = Response.genGenericTemplate(
+                response = Response.genGenericTemplate(
                     "../assets/subaru_img.jpg",
                     i18n.title,
                     i18n.subtitle,
