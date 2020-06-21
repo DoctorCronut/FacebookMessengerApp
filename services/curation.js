@@ -163,21 +163,10 @@ module.exports = class Curation {
                         "payload": {
                             "template_type": "generic",
                             "elements": [{
-                                "title": "Is this the right picture?",
-                                "subtitle": "Tap a button to answer.",
+                                "title": `${model_str}`,
+                                "subtitle": "Do you like this car?",
                                 // "image_url": attachment_url,
-                                "buttons": [
-                                    {
-                                        "type": "postback",
-                                        "title": "Yes!",
-                                        "payload": "yes",
-                                    },
-                                    {
-                                        "type": "postback",
-                                        "title": "No!",
-                                        "payload": "no",
-                                    }
-                                ],
+                                buttons
                             }]
                         }
                     }
