@@ -41,16 +41,11 @@ module.exports = class Receive {
                 text: `An error has occured: \'${error}\'. We have been notified and will fix the issue shortly!`
             };
         }
-        console.log("reached2");
         if (Array.isArray(responses)) {
-            console.log("reached3");
-            let delay = 0;
             for (let response of responses) {
-                this.sendMessage(response, delay * 2000);
-                delay++;
+                this.sendMessage(response);
             }
         } else {
-            console.log("reached4");
             this.sendMessage(responses);
         }
     }
@@ -146,33 +141,7 @@ module.exports = class Receive {
         return response;
     }
 
-    handlePrivateReply(type, object_id) {
-        let welcomeMessage = i18n.get_started.welcome + " " +
-            i18n.get_started.guidance + ". " +
-            i18n.get_started.help;
-
-        let response = Response.genQuickReply(welcomeMessage, [
-            {
-                title: i18n.menu.car_match,
-                payload: "CURATION"
-            },
-            {
-                title: i18n.menu.suggestion,
-                payload: "CARE_HELP"
-            }
-        ]);
-
-        let requestBody = {
-            recipient: {
-                [type]: object_id
-            },
-            message: response
-        };
-
-        callSendAPI(requestBody);
-    }
-
-    sendMessage(response, delay = 0) {
+    sendMessage(response) {
         // Check if there is delay in the response
         // if ("delay" in response) {
         //     delay = response["delay"];
@@ -186,7 +155,6 @@ module.exports = class Receive {
             },
             message: response
         };
-        console.log(requestBody);
         // Check if there is persona id in the response
         // if ("persona_id" in response) {
         //     let persona_id = response["persona_id"];
@@ -201,7 +169,7 @@ module.exports = class Receive {
         //     };
         // }
 
-        setTimeout(() => callSendAPI(requestBody), delay);
+        callSendAPI(requestBody);
     }
 
     firstEntity(nlp, name) {
@@ -216,7 +184,6 @@ module.exports = class Receive {
 function callSendAPI(requestBody) {
     console.log(JSON.stringify(requestBody));
     let domain = config.mPlatformDomain;
-    console.log(domain);
     request(
         {
             uri: "https://graph.facebook.com/v2.6/me/messages",
