@@ -137,13 +137,13 @@ module.exports = class Curation {
                 ]);
                 break;
 
-            // case "CURATION_RESULT":
-            //     response = this.genCurationResponse(payload);
-            //     break;
+            case "CURATION_RESULT":
+                response = this.genCurationResponse(payload);
+                break;
 
-            // case "CURATION_RANDOM":
-            //     response = this.randomModel();
-            //     break;
+            case "CURATION_RANDOM":
+                response = this.randomModel();
+                break;
         }
         return response;
     }
