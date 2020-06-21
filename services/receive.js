@@ -114,7 +114,7 @@ module.exports = class Receive {
     handlePayload(payload) {
         console.log("Received Payload:", `${payload} for ${this.user.psid}`);
 
-        callFBAEventsAPI(this.user.psid, payload);
+        //callFBAEventsAPI(this.user.psid, payload);
 
         let response;
 
