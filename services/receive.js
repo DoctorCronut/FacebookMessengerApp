@@ -41,14 +41,16 @@ module.exports = class Receive {
                 text: `An error has occured: \'${error}\'. We have been notified and will fix the issue shortly!`
             };
         }
-
+        console.log("reached2");
         if (Array.isArray(responses)) {
+            console.log("reached3");
             let delay = 0;
             for (let response of responses) {
                 this.sendMessage(response, delay * 2000);
                 delay++;
             }
         } else {
+            console.log("reached4");
             this.sendMessage(responses);
         }
     }
