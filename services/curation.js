@@ -12,7 +12,6 @@ module.exports = class Curation {
     }
     handlePayload(payload) {
         let response;
-        let outfit;
 
         switch (payload) {
             case "PROMO":

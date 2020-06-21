@@ -1,5 +1,7 @@
 "use strict";
 
+const i18n = require("../locales/en_US.json");
+
 module.exports = class Response {
     static genQuickReply(text, quickReplies) {
         let response = {
@@ -107,20 +109,19 @@ module.exports = class Response {
 
     static genNuxMessage(user) {
         let welcome = this.genText(
-            i18n.__("get_started.welcome", {
-                userFirstName: user.firstName
-            })
-        );
+            i18n.get_started.welcome, {
+            userFirstName: user.firstName
+        });
 
-        let guide = this.genText(i18n.__("get_started.guidance"));
+        let guide = this.genText(i18n.get_started.guidance);
 
-        let curation = this.genQuickReply(i18n.__("get_started.help"), [
+        let curation = this.genQuickReply(i18n.get_started.help, [
             {
-                title: i18n.__("menu.suggestion"),
+                title: i18n.menu.suggestion,
                 payload: "CURATION"
             },
             {
-                title: i18n.__("menu.help"),
+                title: i18n.menu.help,
                 payload: "CARE_HELP"
             }
         ]);

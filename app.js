@@ -13,6 +13,7 @@ const
     app = express().use(bodyParser.json());
 
 var users = {};
+var qualities = [];
 
 // Check if all environment variables are set
 config.checkEnvVariables();
