@@ -157,7 +157,7 @@ module.exports = class Receive {
             message: response
         };
         
-        setTimeout(() => GraphAPi.callSendAPI(requestBody), delay);
+        setTimeout(() => callSendAPI(requestBody), delay);
     }
 
     callSendAPI(requestBody) {
