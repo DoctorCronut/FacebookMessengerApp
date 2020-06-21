@@ -12,6 +12,7 @@ module.exports = class Curation {
     }
     handlePayload(payload) {
         let response;
+        let model;
 
         switch (payload) {
             case "PROMO":
@@ -141,33 +142,45 @@ module.exports = class Curation {
                 break;
 
             case "CURATION_RANDOM":
-                response = this.randomModel();
+                model = `${this.randomModel()}`;
+                let buttons = [
+                    Response.genPostbackButton(
+                        "Yes",
+                        "CURATION_END"
+                    ),
+                    Response.genPostbackButton(
+                        i18n.curation.show,
+                        "CURATION_RANDOM"
+                    )
+                ]
+                let response = Response.genGenericTemplate(
+                    "../assets/subaru_img.jpg",
+                    i18n.title,
+                    i18n.subtitle,
+                    buttons
+                );
                 break;
         }
         return response;
     }
 
     genCurationResponse(payload) {
-        let occasion = payload.split("_")[3].toLowerCase();
-        let budget = payload.split("_")[2].toLowerCase();
-        let outfit = `${this.user.gender}-${occasion}`;
+        // let occasion = payload.split("_")[3].toLowerCase();
+        // let budget = payload.split("_")[2].toLowerCase();
+        // let outfit = `${this.user.gender}-${occasion}`;
 
         let buttons = [
-            Response.genWebUrlButton(
-                i18n.curation.shop,
-                `${config.shopUrl}/products/${outfit}`
-            ),
             Response.genPostbackButton(
                 i18n.curation.show,
                 "CURATION_OTHER_STYLE"
             )
         ];
 
-        if (budget === "50") {
-            buttons.push(
-                Response.genPostbackButton(curation.sales, "CARE_SALES")
-            );
-        }
+        // if (budget === "50") {
+        //     buttons.push(
+        //         Response.genPostbackButton(curation.sales, "CARE_SALES")
+        //     );
+        // }
 
         let response = Response.genGenericTemplate(
             `${config.appUrl}/styles/${outfit}.jpg`,
@@ -183,6 +196,6 @@ module.exports = class Curation {
         let occasion = car_data;
         let randomIndex = Math.floor(Math.random() * occasion.length);
 
-        return occasion[randomIndex].Model;
+        return occasion[randomIndex];
     }
 }

@@ -107,7 +107,7 @@ module.exports = class Response {
         return response;
     }
 
-    static genNuxMessage(user) {
+    static genNuxMessage() {
         let welcome = this.genText(
             "Hi! Welcome to Japanese Car Match!",
         );

@@ -66,7 +66,7 @@ module.exports = class Receive {
 
         if ((greeting && greeting.confidence > 0.8) ||
             message.includes("start over")) {
-            response = Response.genNuxMessage(this.user);
+            response = Response.genNuxMessage();
         } else {
             response = [
                 Response.genText(
@@ -85,28 +85,6 @@ module.exports = class Receive {
                 ])
             ];
         }
-
-        return response;
-    }
-
-    // I dont think we need to handle attachments for our app
-    handleAttachmentMessage() {
-        let response;
-
-        // Get the attachment
-        let attachment = this.webhookEvent.message.attachments[0];
-        console.log("Received attachment:", `${attachment} for ${this.user.psid}`);
-
-        response = Response.genQuickReply(i18n.fallback.attachment, [
-            {
-                title: i18n.menu.suggestion,
-                payload: "CARE_HELP"
-            },
-            {
-                title: i18n.menu.start_over,
-                payload: "GET_STARTED"
-            }
-        ]);
 
         return response;
     }
@@ -145,7 +123,7 @@ module.exports = class Receive {
             payload == "DEVDOCS" ||
             payload == "GITHUB"
         ) {
-            reponse = Response.genNuxMessage(this.user);
+            reponse = Response.genNuxMessage();
         } else if (payload.includes("CURATION")) {
             let curation = new Curation(this.user, this.webhookEvent);
             response = curation.handlePayload(payload);
