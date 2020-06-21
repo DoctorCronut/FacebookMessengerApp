@@ -68,12 +68,9 @@ module.exports = class Receive {
             message.includes("start over")) {
             response = Response.genNuxMessage(this.user);
         } else {
-            console.log(this.webhookEvent.message.text);
             response = [
                 Response.genText(
-                    i18n.fallback.any, {
-                    message: this.webhookEvent.message.text
-                }
+                    "Sorry, but I don’t recognize \"{{message}}\"."
                 ),
                 Response.genText(i18n.get_started.guidance),
                 Response.genQuickReply(i18n.get_started.help, [
