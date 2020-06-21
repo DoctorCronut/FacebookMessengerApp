@@ -70,7 +70,7 @@ module.exports = class Receive {
         } else {
             response = [
                 Response.genText(
-                    "Sorry, but I don’t recognize \"{{message}}\"."
+                    `Sorry, but I don’t recognize \"${this.webhookEvent.message.text}\".`
                 ),
                 Response.genText(i18n.get_started.guidance),
                 Response.genQuickReply(i18n.get_started.help, [
