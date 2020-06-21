@@ -183,6 +183,6 @@ module.exports = class Curation {
         let occasion = car_data;
         let randomIndex = Math.floor(Math.random() * occasion.length);
 
-        return occasion[randomIndex];
+        return occasion[randomIndex].Model;
     }
 }

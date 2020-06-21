@@ -109,7 +109,7 @@ module.exports = class Response {
 
     static genNuxMessage(user) {
         let welcome = this.genText(
-            `Hi ${user.firstName}! Welcome to Japanese Car Match!`,
+            "Hi! Welcome to Japanese Car Match!",
         );
 
         let guide = this.genText(i18n.get_started.guidance);
@@ -121,7 +121,7 @@ module.exports = class Response {
             },
             {
                 title: i18n.menu.random,
-                payload: "CARE_RANDOM"
+                payload: "CURATION_RANDOM"
             }
         ]);
 
