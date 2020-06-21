@@ -225,9 +225,12 @@ function callSendAPI(requestBody) {
             method: "POST",
             json: requestBody
         },
-        error => {
+        (error, res, body) => {
             if (error) {
                 console.error("Unable to send message:", error);
+            }
+            else {
+                console.log("message sent!");
             }
         }
     );

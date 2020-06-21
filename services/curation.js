@@ -143,7 +143,7 @@ module.exports = class Curation {
             case "CURATION_RANDOM":
                 console.log("reached");
                 let model = this.randomModel();
-                let model_str = `Model: ${model.Model}`;
+                let model_str = `${model.Make} ${model.Model}`;
                 let buttons = [
                     Response.genPostbackButton(
                         "Yes",
