@@ -140,6 +140,9 @@ module.exports = class Curation {
                 response = this.genCurationResponse(payload);
                 break;
 
+            case "CURATION_OTHER":
+
+
             case "CURATION_RANDOM":
                 console.log("reached");
                 let model = this.randomModel();
@@ -173,8 +176,12 @@ module.exports = class Curation {
 
         let buttons = [
             Response.genPostbackButton(
+                "Yes",
+                "CURATION_END"
+            ),
+            Response.genPostbackButton(
                 i18n.curation.show,
-                "CURATION_OTHER_STYLE"
+                "CURATION_OTHER"
             )
         ];
 
@@ -185,9 +192,8 @@ module.exports = class Curation {
         // }
 
         let response = Response.genGenericTemplate(
-            `${config.appUrl}/styles/${outfit}.jpg`,
-            i18n.__("curation.title"),
-            i18n.__("curation.subtitle"),
+            i18n.curation.title,
+            i18n.curation.subtitle,
             buttons
         );
 
