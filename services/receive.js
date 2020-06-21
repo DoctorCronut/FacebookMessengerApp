@@ -216,6 +216,7 @@ module.exports = class Receive {
 function callSendAPI(requestBody) {
     console.log(JSON.stringify(requestBody));
     let domain = config.mPlatformDomain;
+    console.log(domain);
     request(
         {
             uri: domain + '/me/messages',
