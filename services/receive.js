@@ -186,7 +186,7 @@ module.exports = class Receive {
             },
             message: response
         };
-
+        console.log(requestBody);
         // Check if there is persona id in the response
         // if ("persona_id" in response) {
         //     let persona_id = response["persona_id"];
@@ -214,6 +214,7 @@ module.exports = class Receive {
 };
 
 function callSendAPI(requestBody) {
+    console.log("here");
     let domain = config.mPlatformDomain;
     request(
         {
