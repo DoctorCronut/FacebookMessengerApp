@@ -37,8 +37,7 @@ module.exports = class Receive {
         } catch (error) {
             console.error(error);
             responses = {
-                text: `An error has occured: \'${error}\'. We have been notified and \
-        will fix the issue shortly!`
+                text: `An error has occured: \'${error}\'. We have been notified and will fix the issue shortly!`
             };
         }
 
@@ -69,6 +68,7 @@ module.exports = class Receive {
             message.includes("start over")) {
             response = Response.genNuxMessage(this.user);
         } else {
+            console.log(this.webhookEvent.message.text);
             response = [
                 Response.genText(
                     i18n.fallback.any, {
@@ -281,9 +281,9 @@ function callFBAEventsAPI(senderPsid, eventName) {
         },
         error => {
             if (!error) {
-                console.log('FBA event \'${eventName}\'');
+                console.log(`FBA event \'${eventName}\'`);
             } else {
-                console.error('Unable to send FBA event \'${eventName}\':' + error);
+                console.error(`Unable to send FBA event \'${eventName}\':` + error);
             }
         }
     );
