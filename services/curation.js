@@ -12,7 +12,6 @@ module.exports = class Curation {
     }
     handlePayload(payload) {
         let response;
-        let model;
 
         switch (payload) {
             case "PROMO":
@@ -143,8 +142,8 @@ module.exports = class Curation {
 
             case "CURATION_RANDOM":
                 console.log("reached");
-                model = this.randomModel();
-                model_str = `Model: ${model.Model}`;
+                let model = this.randomModel();
+                let model_str = `Model: ${model.Model}`;
                 let buttons = [
                     Response.genPostbackButton(
                         "Yes",
