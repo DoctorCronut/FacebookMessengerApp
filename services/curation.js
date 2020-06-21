@@ -156,10 +156,11 @@ module.exports = class Curation {
                 ]
                 response = Response.genGenericTemplate(
                     "../assets/subaru_img.jpg",
-                    i18n.title,
+                    model,
                     i18n.subtitle,
                     buttons
                 );
+                console.log("passed");
                 break;
         }
         return response;
