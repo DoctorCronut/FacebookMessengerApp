@@ -20,7 +20,7 @@ module.exports = class Response {
         return response;
     }
 
-    static genGenericTemplate(image_url, title, subtitle, buttons) {
+    static genGenericTemplate(title, subtitle, buttons) {
         let response = {
             attachment: {
                 type: "template",
@@ -32,7 +32,6 @@ module.exports = class Response {
                             {
                                 title: title,
                                 subtitle: subtitle,
-                                image_url: image_url,
                                 buttons: buttons
                             }
                         ]

@@ -155,7 +155,7 @@ module.exports = class Curation {
                     )
                 ]
                 response = Response.genGenericTemplate(
-                    "",
+                    
                     model_str,
                     i18n.subtitle,
                     buttons
