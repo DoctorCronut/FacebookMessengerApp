@@ -37,8 +37,8 @@ module.exports = class Receive {
         } catch (error) {
             console.error(error);
             responses = {
-                text: 'An error has occured: \'${error}\'. We have been notified and \
-        will fix the issue shortly!'
+                text: `An error has occured: \'${error}\'. We have been notified and \
+        will fix the issue shortly!`
             };
         }
 
@@ -56,7 +56,7 @@ module.exports = class Receive {
     handleTextMessage() {
         console.log(
             "received text:",
-            '${this.webhookEvent.message.text} for ${this.user.psid}'
+            `${this.webhookEvent.message.text} for ${this.user.psid}`
         );
 
         let greeting = this.firstEntity(this.webhookEvent.message.nlp, "greetings");
@@ -137,7 +137,7 @@ module.exports = class Receive {
     }
 
     handlePayload(payload) {
-        console.log("Received Payload:", '${payload} for ${this.user.psid}');
+        console.log("Received Payload:", `${payload} for ${this.user.psid}`);
 
         callFBAEventsAPI(this.user.psid, payload);
 
@@ -159,7 +159,7 @@ module.exports = class Receive {
             ];
         } else {
             response = {
-                text: 'This is a default postback message for paylaod: ${payload}!'
+                text: `This is a default postback message for paylaod: ${payload}!`
             }
         }
 
