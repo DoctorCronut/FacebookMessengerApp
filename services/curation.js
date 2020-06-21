@@ -135,7 +135,8 @@ module.exports = class Curation {
                         payload: "CURATION_RESULT"
                     }
                 ]);
-
+                break;
+                
             case "CURATION_RESULT":
                 response = this.genCurationResponse(payload);
                 break;
