@@ -42,8 +42,10 @@ module.exports = class Receive {
             };
         }
         if (Array.isArray(responses)) {
+            let delay = 0;
             for (let response of responses) {
-                this.sendMessage(response);
+                this.sendMessage(response, delay * 2000);
+                delay++;
             }
         } else {
             this.sendMessage(responses);
@@ -122,7 +124,7 @@ module.exports = class Receive {
             reponse = Response.genNuxMessage();
         } else if (payload.includes("END")) {
             response = Response.genEndMessage();
-        }else if (payload.includes("CURATION")) {
+        } else if (payload.includes("CURATION")) {
             console.log("Accessed");
             let curation = new Curation(this.user, this.webhookEvent);
             response = curation.handlePayload(payload);
@@ -141,13 +143,24 @@ module.exports = class Receive {
         return response;
     }
 
-    sendMessage(response) {
+    sendMessage(response, delay = 0) {
+        
+        if ("delay" in response) {
+            delay = response["delay"];
+            delete response["delay"];
+        }
+
         let requestBody = {
             recipient: {
                 id: this.user.psid
             },
             message: response
         };
+        
+        setTimeout(() => GraphAPi.callSendAPI(requestBody), delay);
+    }
+
+    callSendAPI(requestBody) {
         console.log(JSON.stringify(requestBody));
         request(
             {
