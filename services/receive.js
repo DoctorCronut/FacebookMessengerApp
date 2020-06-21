@@ -23,6 +23,7 @@ module.exports = class Receive {
                 let message = event.message;
                 if (message.quick_reply) {
                     responses = this.handleQuickReply();
+                    console.log("reached");
                 } else if (message.attachments) {
                     responses = this.handleAttachmentMessage();
                 } else if (message.text) {
