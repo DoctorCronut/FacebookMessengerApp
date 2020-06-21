@@ -126,4 +126,8 @@ module.exports = class Response {
 
         return [welcome, guide, curation];
     }
+
+    static genEndMessage() {
+        return this.genText("Thank you for using our service! Type 'start over' to find another car!");
+    }
 }

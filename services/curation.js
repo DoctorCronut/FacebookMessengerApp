@@ -150,7 +150,7 @@ module.exports = class Curation {
                 let buttons = [
                     Response.genPostbackButton(
                         "Yes",
-                        "CURATION_END"
+                        "END"
                     ),
                     Response.genPostbackButton(
                         i18n.curation.show,
@@ -165,18 +165,11 @@ module.exports = class Curation {
                             "elements": [{
                                 "title": `${model_str}`,
                                 "subtitle": "Do you like this car?",
-                                // "image_url": attachment_url,
                                 buttons
                             }]
                         }
                     }
                 }
-                // response = Response.genGenericTemplate(
-                //     model_str,
-                //     i18n.subtitle,
-                //     buttons
-                // );
-                // console.log("passed");
                 break;
         }
         return response;
@@ -190,7 +183,7 @@ module.exports = class Curation {
         let buttons = [
             Response.genPostbackButton(
                 "Yes",
-                "CURATION_END"
+                "END"
             ),
             Response.genPostbackButton(
                 i18n.curation.show,
@@ -198,17 +191,19 @@ module.exports = class Curation {
             )
         ];
 
-        // if (budget === "50") {
-        //     buttons.push(
-        //         Response.genPostbackButton(curation.sales, "CARE_SALES")
-        //     );
-        // }
-
-        let response = Response.genGenericTemplate(
-            i18n.curation.title,
-            i18n.curation.subtitle,
-            buttons
-        );
+        response = {
+            "attachment": {
+                "type": "template",
+                "payload": {
+                    "template_type": "generic",
+                    "elements": [{
+                        "title": "filler",
+                        "subtitle": "Do you like this car?",
+                        buttons
+                    }]
+                }
+            }
+        }
 
         return response;
     }

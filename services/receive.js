@@ -112,8 +112,6 @@ module.exports = class Receive {
     handlePayload(payload) {
         console.log("Received Payload:", `${payload} for ${this.user.psid}`);
 
-        //callFBAEventsAPI(this.user.psid, payload);
-
         let response;
 
         if (
@@ -122,7 +120,9 @@ module.exports = class Receive {
             payload == "GITHUB"
         ) {
             reponse = Response.genNuxMessage();
-        } else if (payload.includes("CURATION")) {
+        } else if (payload.includes("END")) {
+            response = Response.genEndMessage();
+        }else if (payload.includes("CURATION")) {
             console.log("Accessed");
             let curation = new Curation(this.user, this.webhookEvent);
             response = curation.handlePayload(payload);
@@ -142,35 +142,13 @@ module.exports = class Receive {
     }
 
     sendMessage(response) {
-        // Check if there is delay in the response
-        // if ("delay" in response) {
-        //     delay = response["delay"];
-        //     delete response["delay"];
-        // }
-
-        // Construct the message body
         let requestBody = {
             recipient: {
                 id: this.user.psid
             },
             message: response
         };
-        // Check if there is persona id in the response
-        // if ("persona_id" in response) {
-        //     let persona_id = response["persona_id"];
-        //     delete response["persona_id"];
-
-        //     requestBody = {
-        //         recipient: {
-        //             id: this.user.psid
-        //         },
-        //         message: response,
-        //         persona_id: persona_id
-        //     };
-        // }
-
         console.log(JSON.stringify(requestBody));
-        // let domain = config.mPlatformDomain;
         request(
             {
                 uri: "https://graph.facebook.com/v2.6/me/messages",
@@ -195,40 +173,3 @@ module.exports = class Receive {
         return nlp && nlp.entities && nlp.entities[name] && nlp.entities[name][0];
     }
 };
-
-// function callFBAEventsAPI(senderPsid, eventName) {
-//     // Construct the message body
-//     let domain = config.mPlatformDomain;
-//     let appId = config.appId;
-//     let requestBody = {
-//         event: "CUSTOM_APP_EVENTS",
-//         custom_events: JSON.stringify([
-//             {
-//                 _eventName: "postback_payload",
-//                 _value: eventName,
-//                 _origin: "original_coast_clothing"
-//             }
-//         ]),
-//         advertiser_tracking_enabled: 1,
-//         application_tracking_enabled: 1,
-//         extinfo: JSON.stringify(["mb1"]),
-//         page_id: config.pageId,
-//         page_scoped_user_id: senderPsid
-//     };
-
-//     // Send the HTTP request to the Activities API
-//     request(
-//         {
-//             uri: domain + '/' + appId + '/activities',
-//             method: "POST",
-//             form: requestBody
-//         },
-//         error => {
-//             if (!error) {
-//                 console.log(`FBA event \'${eventName}\'`);
-//             } else {
-//                 console.error(`Unable to send FBA event \'${eventName}\':` + error);
-//             }
-//         }
-//     );
-// }
