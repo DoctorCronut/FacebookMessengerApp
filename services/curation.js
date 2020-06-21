@@ -157,13 +157,37 @@ module.exports = class Curation {
                         "CURATION_RANDOM"
                     )
                 ]
-                response = Response.genGenericTemplate(
-                    
-                    model_str,
-                    i18n.subtitle,
-                    buttons
-                );
-                console.log("passed");
+                response = {
+                    "attachment": {
+                        "type": "template",
+                        "payload": {
+                            "template_type": "generic",
+                            "elements": [{
+                                "title": "Is this the right picture?",
+                                "subtitle": "Tap a button to answer.",
+                                // "image_url": attachment_url,
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "Yes!",
+                                        "payload": "yes",
+                                    },
+                                    {
+                                        "type": "postback",
+                                        "title": "No!",
+                                        "payload": "no",
+                                    }
+                                ],
+                            }]
+                        }
+                    }
+                }
+                // response = Response.genGenericTemplate(
+                //     model_str,
+                //     i18n.subtitle,
+                //     buttons
+                // );
+                // console.log("passed");
                 break;
         }
         return response;
