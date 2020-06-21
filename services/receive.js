@@ -219,7 +219,7 @@ function callSendAPI(requestBody) {
     console.log(domain);
     request(
         {
-            uri: domain + '/me/messages',
+            uri: "https://graph.facebook.com/v2.6/me/messages",
             qs: {
                 access_token: config.pageAccessToken
             },
