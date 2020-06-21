@@ -125,6 +125,7 @@ module.exports = class Receive {
         ) {
             reponse = Response.genNuxMessage();
         } else if (payload.includes("CURATION")) {
+            console.log("Accessed")
             let curation = new Curation(this.user, this.webhookEvent);
             response = curation.handlePayload(payload);
         } else if (payload.includes("CHAT-PLUGIN")) {
