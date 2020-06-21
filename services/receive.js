@@ -214,7 +214,7 @@ module.exports = class Receive {
 };
 
 function callSendAPI(requestBody) {
-    console.log("here");
+    console.log(JSON.stringify(requestBody));
     let domain = config.mPlatformDomain;
     request(
         {
