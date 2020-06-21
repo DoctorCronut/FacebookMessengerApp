@@ -146,7 +146,7 @@ module.exports = class Receive {
             payload == "GITHUB"
         ) {
             reponse = Response.genNuxMessage(this.user);
-        } else if (payload.includes("CURATION") || payload.includes("COUPON")) {
+        } else if (payload.includes("CURATION")) {
             let curation = new Curation(this.user, this.webhookEvent);
             response = curation.handlePayload(payload);
         } else if (payload.includes("CHAT-PLUGIN")) {
@@ -156,7 +156,7 @@ module.exports = class Receive {
             ];
         } else {
             response = {
-                text: `This is a default postback message for paylaod: ${payload}!`
+                text: `This is a default postback message for payload: ${payload}!`
             }
         }
 
@@ -191,10 +191,10 @@ module.exports = class Receive {
 
     sendMessage(response, delay = 0) {
         // Check if there is delay in the response
-        if ("delay" in response) {
-            delay = response["delay"];
-            delete response["delay"];
-        }
+        // if ("delay" in response) {
+        //     delay = response["delay"];
+        //     delete response["delay"];
+        // }
 
         // Construct the message body
         let requestBody = {
