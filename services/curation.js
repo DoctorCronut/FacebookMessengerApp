@@ -155,7 +155,7 @@ module.exports = class Curation {
                     )
                 ]
                 response = Response.genGenericTemplate(
-                    "../assets/subaru_img.jpg",
+                    "",
                     model_str,
                     i18n.subtitle,
                     buttons
