@@ -1,7 +1,5 @@
 'use strict';
 
-const e = require('express');
-
 const
     express = require('express'),
     request = require('request'),
@@ -13,7 +11,7 @@ const
     app = express().use(bodyParser.json());
 
 var users = {};
-var qualities = [];
+global.qualities = {};
 
 // Check if all environment variables are set
 config.checkEnvVariables();
