@@ -228,10 +228,11 @@ module.exports = class Curation {
 
 function processCarData(brand, c_class, price, spd, mpg) {
     let cars = car_data;
-    prices = price.split(" ");
-    spds = spd.split(" ");
+    let prices = price.split(" ");
+    let spds = spd.split(" ");
+    let mpg;
     if (mpg != "electric") mpgs = mpg.split(" ");
-    price_low, price_high, spd_low, spd_high, mpg_low, mpg_high = 0;
+    let price_low, price_high, spd_low, spd_high, mpg_low, mpg_high = 0;
 
     if (prices[0] == "15k") {
         price_low = 15000;
