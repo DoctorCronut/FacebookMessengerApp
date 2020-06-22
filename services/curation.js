@@ -213,7 +213,7 @@ module.exports = class Curation {
             matched_cars.pop();
         } else {
             response = [
-                Response.genEndMessage()
+                Response.genText("Sorry, no matches found for your specified preferences. Type start over to try again!")
             ];
         }
         return response;
