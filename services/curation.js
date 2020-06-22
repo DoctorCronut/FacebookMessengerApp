@@ -184,6 +184,7 @@ module.exports = class Curation {
     }
 
     genCurationResponse() {
+        let response;
         if (matched_cars > 0) {
             let buttons = [
                 Response.genPostbackButton(
