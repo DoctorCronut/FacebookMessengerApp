@@ -49,8 +49,8 @@ app.post('/webhook', (req, res) => {
 
         body.entry.forEach(function (entry) {
             let webhook_event = entry.messaging[0];
+            console.log("sadasdasdashdfaskdjadasd")
             console.log(webhook_event);
-            console.log(webhook_event.quick_reply.payload);
             console.log("hjhjhjhjhjjhjhjhjjhjh");
             let sender_psid = webhook_event.sender.id;
             if(webhook_event.hasOwnProperty('quick_reply')) {
