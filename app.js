@@ -53,6 +53,8 @@ app.post('/webhook', (req, res) => {
             console.log("Here???");
             let sender_psid = webhook_event.sender.id;
             if(webhook_event.hasOwnProperty('quick_reply')) {
+                console.log('Entered');
+                console.log(webhook_event.text);
                 if (webhook_event.quick_reply.payload.includes("CURATION")) {
                     qualities.push(webhook_event.text);    
                 }
