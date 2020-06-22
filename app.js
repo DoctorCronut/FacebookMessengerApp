@@ -12,6 +12,7 @@ const
 
 var users = {};
 global.qualities = [];
+global.matched_cars = [];
 
 // Check if all environment variables are set
 config.checkEnvVariables();
@@ -56,6 +57,7 @@ app.post('/webhook', (req, res) => {
             if(webhook_event.hasOwnProperty('message') && webhook_event.message.hasOwnProperty("quick_reply")) {
                 console.log('Entered');
                 if (webhook_event.message.quick_reply.payload.includes("CURATION")) {
+                    console.log(webhook_event.message.text);
                     qualities.push(webhook_event.message.text);    
                 }
             }

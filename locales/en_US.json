@@ -20,7 +20,7 @@
     "class": "What class of car are you looking for?",
     "price_range": "Great! Let's get started. First, is there a price range in mind?",
     "miles": "What is your preferred miles per gallon?",
-    "speed": "What is your preferred 0-60 speed?",
+    "speed": "What is your preferred 0-60 mph time (measured in seconds)?",
     "brand": "What is your preferred brand?",
     "classes": [
       "SUV",
@@ -51,8 +51,8 @@
     "mpg_range": [
       "15 - 28.75",
       "28.75 - 42.5",
-      "42.5-56.25",
-      "56.25-70",
+      "42.5 - 56.25",
+      "56.25 - 70",
       "electric"
     ],
     "title": "Match Found",
