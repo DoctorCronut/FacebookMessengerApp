@@ -157,7 +157,7 @@ module.exports = class Curation {
                 if (response.title == i18n.curation.mpg_range[2]) qualities["mpg"] = i18n.curation.mpg_range[2];
                 if (response.title == i18n.curation.mpg_range[3]) qualities["mpg"] = i18n.curation.mpg_range[3];
                 if (response.title == i18n.curation.mpg_range[4]) qualities["mpg"] = i18n.curation.mpg_range[4];
-                console.log(response.title);
+                console.log(response.text);
                 console.log("SDSDASDSADSDSD" + qualities["mpg"]);
                 break;
 
