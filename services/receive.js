@@ -160,29 +160,30 @@ module.exports = class Receive {
         setTimeout(() => callSendAPI(requestBody), delay);
     }
 
-    callSendAPI(requestBody) {
-        console.log(JSON.stringify(requestBody));
-        request(
-            {
-                uri: "https://graph.facebook.com/v2.6/me/messages",
-                qs: {
-                    access_token: 'EAAJ6dDA8aW8BAKKzLI7e7c9BfuiNkGDixRjKwhJvJZAID64JQG6wcFAn3R2nprOzbEZAFAaZC1F0gybAAmFruyeVhLbTl3ZBQpolwv4ZBnC7SWsgRhZBfEyzYPV1JnrToqFhh3AcbJoyhMUrofPIVl5dqoV2maxZA8wADcs9hLxMgZDZD'
-                },
-                method: "POST",
-                json: requestBody
-            },
-            (error, res, body) => {
-                if (error) {
-                    console.error("Unable to send message:", error);
-                }
-                else {
-                    console.log("message sent!");
-                }
-            }
-        );
-    }
 
     firstEntity(nlp, name) {
         return nlp && nlp.entities && nlp.entities[name] && nlp.entities[name][0];
     }
 };
+
+function callSendAPI(requestBody) {
+    console.log(JSON.stringify(requestBody));
+    request(
+        {
+            uri: "https://graph.facebook.com/v2.6/me/messages",
+            qs: {
+                access_token: 'EAAJ6dDA8aW8BAKKzLI7e7c9BfuiNkGDixRjKwhJvJZAID64JQG6wcFAn3R2nprOzbEZAFAaZC1F0gybAAmFruyeVhLbTl3ZBQpolwv4ZBnC7SWsgRhZBfEyzYPV1JnrToqFhh3AcbJoyhMUrofPIVl5dqoV2maxZA8wADcs9hLxMgZDZD'
+            },
+            method: "POST",
+            json: requestBody
+        },
+        (error, res, body) => {
+            if (error) {
+                console.error("Unable to send message:", error);
+            }
+            else {
+                console.log("message sent!");
+            }
+        }
+    );
+}
