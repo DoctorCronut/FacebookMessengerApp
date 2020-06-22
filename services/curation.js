@@ -42,6 +42,10 @@ module.exports = class Curation {
                     }
 
                 ]);
+                if (response.title == i18n.curation.brands[0]) localStorage.setItem("brand", i18n.curation.brands[0]); 
+                if (response.title == i18n.curation.brands[1]) localStorage.setItem("brand", i18n.curation.brands[1]);
+                if (response.title == i18n.curation.brands[2]) localStorage.setItem("brand", i18n.curation.brands[2]);
+                if (response.title == i18n.curation.brands[3]) localStorage.setItem("brand", i18n.curation.brands[3]);
                 break;
             case "CURATION_BRANDS":
                 response = Response.genQuickReply(i18n.curation.class, [
@@ -74,6 +78,13 @@ module.exports = class Curation {
                         payload: "CURATION_FOR_CLASSES"
                     }
                 ]);
+                if (response.title == i18n.curation.classes[0]) localStorage.setItem("class", i18n.curation.classes[0]);
+                if (response.title == i18n.curation.classes[1]) localStorage.setItem("class", i18n.curation.classes[1]);
+                if (response.title == i18n.curation.classes[2]) localStorage.setItem("class", i18n.curation.classes[2]);
+                if (response.title == i18n.curation.classes[3]) localStorage.setItem("class", i18n.curation.classes[3]);
+                if (response.title == i18n.curation.classes[4]) localStorage.setItem("class", i18n.curation.classes[4]);
+                if (response.title == i18n.curation.classes[5]) localStorage.setItem("class", i18n.curation.classes[5]);
+                if (response.title == i18n.curation.classes[6]) localStorage.setItem("class", i18n.curation.classes[6]);
                 break;
             case "CURATION_FOR_CLASSES":
                 response = Response.genQuickReply(i18n.curation.price_range, [
@@ -94,6 +105,10 @@ module.exports = class Curation {
                         payload: "CURATION_PRICES"
                     }
                 ]);
+                if (response.title == i18n.curation.prices[0]) localStorage.setItem("prices", i18n.curation.prices[0]);
+                if (response.title == i18n.curation.prices[1]) localStorage.setItem("prices", i18n.curation.prices[1]);
+                if (response.title == i18n.curation.prices[2]) localStorage.setItem("prices", i18n.curation.prices[2]);
+                if (response.title == i18n.curation.prices[3]) localStorage.setItem("prices", i18n.curation.prices[3]);
                 break;
             case "CURATION_PRICES":
                 response = Response.genQuickReply(i18n.curation.speed, [
@@ -110,6 +125,9 @@ module.exports = class Curation {
                         payload: "CURATION_SPEED"
                     }
                 ]);
+                if (response.title == i18n.curation.spd_range[0]) localStorage.setItem("speed", i18n.curation.spd_range[0]);
+                if (response.title == i18n.curation.spd_range[1]) localStorage.setItem("speed", i18n.curation.spd_range[1]);
+                if (response.title == i18n.curation.spd_range[2]) localStorage.setItem("speed", i18n.curation.spd_range[2]);
                 break;
             case "CURATION_SPEED":
                 response = Response.genQuickReply(i18n.curation.miles, [
@@ -134,14 +152,29 @@ module.exports = class Curation {
                         payload: "CURATION_RESULT"
                     }
                 ]);
+                if (response.title == i18n.curation.mpg_range[0]) localStorage.setItem("mpg", i18n.curation.mpg_range[0]);
+                if (response.title == i18n.curation.mpg_range[1]) localStorage.setItem("mpg", i18n.curation.mpg_range[1]);
+                if (response.title == i18n.curation.mpg_range[2]) localStorage.setItem("mpg", i18n.curation.mpg_range[2]);
+                if (response.title == i18n.curation.mpg_range[3]) localStorage.setItem("mpg", i18n.curation.mpg_range[3]);
+                if (response.title == i18n.curation.mpg_range[4]) localStorage.setItem("mpg", i18n.curation.mpg_range[4]);
                 break;
 
             case "CURATION_RESULT":
+                let brand_name = localStorage.getItem("brand");
+                let class_name = localStorage.getItem("class");
+                let car_price = localStorage.getItem("prices");
+                let car_speed = localStorage.getItem("speed");
+                let car_mpg = localStorage.getItem("mpg");
+                console.log(brand_name);
+                console.log(class_name);
+                console.log(car_price);
+                console.log(car_speed);
+                console.log(car_mpg);
                 response = this.genCurationResponse(payload);
                 break;
 
             case "CURATION_OTHER":
-
+                break;
 
             case "CURATION_RANDOM":
                 console.log("reached");
