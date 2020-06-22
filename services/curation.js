@@ -154,7 +154,7 @@ module.exports = class Curation {
             case "CURATION_RANDOM":
                 console.log("reached");
                 let model = this.randomModel();
-                let model_str = `${model.Make} ${model.Model}`;
+                let model_str = `${car.Make} ${car.Model} ${car.Classification} $${car.price} ${car["0-60Time"]}s ${car.MPG}mpg`;
                 let buttons = [
                     Response.genPostbackButton(
                         "Yes",
@@ -186,6 +186,8 @@ module.exports = class Curation {
     genCurationResponse() {
         let response;
         if (matched_cars > 0) {
+            let car = matched_cars[matched_cars.length - 1]
+            let model_str = `${car.Make} ${car.Model} ${car.Classification} $${car.price} ${car["0-60Time"]}s ${car.MPG}mpg`;
             let buttons = [
                 Response.genPostbackButton(
                     "Yes",
@@ -203,7 +205,7 @@ module.exports = class Curation {
                     "payload": {
                         "template_type": "generic",
                         "elements": [{
-                            "title": matched_cars[matched_cars.length - 1],
+                            "title": model_str,
                             "subtitle": "Do you like this car?",
                             buttons
                         }]
@@ -273,10 +275,18 @@ function processCarData(brand, c_class, price, spd, mpg) {
 
     for (var i = 0; i < cars.length; i++) {
         var car = cars[i];
+        console.log("-------------------------------------------------------");
+        console.log(car.Make);
+        console.log(car.Model);
+        console.log(car.Classification);
+        console.log(car.AveragePrice);
+        console.log(car.MPG);
+        console.log(car["0-60Time"]);
+        console.log("-------------------------------------------------------");
         if (car.Make === brand) {
             if (car.Classification === c_class) {
                 if (car.AveragePrice >= price_low && (car.AveragePrice <= price_high || price_high === 0)) {
-                    if ((car.mpg === "electric" && car.MPG === "electric") || (car.mpg >= mpg_low && car.mpg <= mpg_high || (mpg_high === 0 && mpg_low != 0))) {
+                    if ((mpg === "electric" && car.MPG === "electric") || (car.MPG >= mpg_low && car.MPG <= mpg_high || (mpg_high === 0 && mpg_low != 0))) {
                         if (car["0-60Time"] >= spd_low && (car["0-60Time"] <= spd_high || spd_high === 0)) {
                             matched_cars.push(car);
                         }
