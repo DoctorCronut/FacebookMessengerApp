@@ -42,10 +42,6 @@ module.exports = class Curation {
                     }
 
                 ]);
-                if (response.title == i18n.curation.brands[0]) qualities["brand"] = i18n.curation.brands[0];
-                if (response.title == i18n.curation.brands[1]) qualities["brand"] = i18n.curation.brands[1];
-                if (response.title == i18n.curation.brands[2]) qualities["brand"] = i18n.curation.brands[2];
-                if (response.title == i18n.curation.brands[3]) qualities["brand"] = i18n.curation.brands[3];
                 break;
             case "CURATION_BRANDS":
                 response = Response.genQuickReply(i18n.curation.class, [
@@ -78,13 +74,6 @@ module.exports = class Curation {
                         payload: "CURATION_FOR_CLASSES"
                     }
                 ]);
-                if (response.title == i18n.curation.classes[0]) qualities["class"] = i18n.curation.classes[0];
-                if (response.title == i18n.curation.classes[1]) qualities["class"] = i18n.curation.classes[1];
-                if (response.title == i18n.curation.classes[2]) qualities["class"] = i18n.curation.classes[2];
-                if (response.title == i18n.curation.classes[3]) qualities["class"] = i18n.curation.classes[3];
-                if (response.title == i18n.curation.classes[4]) qualities["class"] = i18n.curation.classes[4];
-                if (response.title == i18n.curation.classes[5]) qualities["class"] = i18n.curation.classes[5];
-                if (response.title == i18n.curation.classes[6]) qualities["class"] = i18n.curation.classes[6];
                 break;
             case "CURATION_FOR_CLASSES":
                 response = Response.genQuickReply(i18n.curation.price_range, [
@@ -105,10 +94,6 @@ module.exports = class Curation {
                         payload: "CURATION_PRICES"
                     }
                 ]);
-                if (response.title == i18n.curation.prices[0]) qualities["prices"] = i18n.curation.prices[0];
-                if (response.title == i18n.curation.prices[1]) qualities["prices"] = i18n.curation.prices[1];
-                if (response.title == i18n.curation.prices[2]) qualities["prices"] = i18n.curation.prices[2];
-                if (response.title == i18n.curation.prices[3]) qualities["prices"] = i18n.curation.prices[3];
                 break;
             case "CURATION_PRICES":
                 response = Response.genQuickReply(i18n.curation.speed, [
@@ -125,9 +110,6 @@ module.exports = class Curation {
                         payload: "CURATION_SPEED"
                     }
                 ]);
-                if (response.title == i18n.curation.spd_range[0]) qualities["speed"] = i18n.curation.spd_range[0];
-                if (response.title == i18n.curation.spd_range[1]) qualities["speed"] = i18n.curation.spd_range[1];
-                if (response.title == i18n.curation.spd_range[2]) qualities["speed"] = i18n.curation.spd_range[2];
                 break;
             case "CURATION_SPEED":
                 response = Response.genQuickReply(i18n.curation.miles, [
@@ -152,26 +134,10 @@ module.exports = class Curation {
                         payload: "CURATION_RESULT"
                     }
                 ]);
-                if (response.title == i18n.curation.mpg_range[0]) qualities["mpg"] = i18n.curation.mpg_range[0];
-                if (response.title == i18n.curation.mpg_range[1]) qualities["mpg"] = i18n.curation.mpg_range[1];
-                if (response.title == i18n.curation.mpg_range[2]) qualities["mpg"] = i18n.curation.mpg_range[2];
-                if (response.title == i18n.curation.mpg_range[3]) qualities["mpg"] = i18n.curation.mpg_range[3];
-                if (response.title == i18n.curation.mpg_range[4]) qualities["mpg"] = i18n.curation.mpg_range[4];
-                console.log(JSON.stringify(response));
-                console.log("SDSDASDSADSDSD" + qualities["mpg"]);
                 break;
 
             case "CURATION_RESULT":
-                let brand_name = qualities["brand"];
-                let class_name = qualities["class"];
-                let car_price = qualities["prices"];
-                let car_speed = qualities["speed"];
-                let car_mpg = qualities["mpg"];
-                console.log(brand_name);
-                console.log(class_name);
-                console.log(car_price);
-                console.log(car_speed);
-                console.log(car_mpg);
+                console.log(qualities);
                 response = this.genCurationResponse(payload);
                 break;
 

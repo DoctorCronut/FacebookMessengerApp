@@ -11,7 +11,7 @@ const
     app = express().use(bodyParser.json());
 
 var users = {};
-global.qualities = {};
+global.qualities = [];
 
 // Check if all environment variables are set
 config.checkEnvVariables();
@@ -52,6 +52,11 @@ app.post('/webhook', (req, res) => {
             console.log(webhook_event);
             console.log("Here???");
             let sender_psid = webhook_event.sender.id;
+            if(webhook_event.hasOwnProperty('quick_reply')) {
+                if (webhook_event.quick_reply.payload.includes("CURATION")) {
+                    qualities.push(webhook_event.text);    
+                }
+            }
             console.log('Sender PSID: ' + sender_psid);
 
             if ("read" in webhook_event) {
