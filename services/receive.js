@@ -67,6 +67,7 @@ module.exports = class Receive {
         if ((greeting && greeting.confidence > 0.8) ||
             message.includes("start over")) {
             response = Response.genNuxMessage();
+            matched_cars = [];
         } else {
             response = [
                 Response.genText(
