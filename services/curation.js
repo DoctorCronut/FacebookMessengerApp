@@ -310,21 +310,23 @@ function processCarData(brand, c_class, price, spd, mpg) {
         console.log(car);
         let isMatch = 0;
         if (car.Make == brand || brand == "Any") {
-            console.log("Matched!");
+            console.log("Matched Make");
             isMatch += 1;
         }
         if (car.Classification == c_class || c_class == "Any") {
-            console.log("Matched!");
+            console.log("Matched Class");
             isMatch += 1;
         }
         if (car.AveragePrice >= price_low && (car.AveragePrice <= price_high || price_high === 0) || price == "Any") {
-            console.log("Matched!");
+            console.log("Matched Price");
             isMatch += 1;
         }
-        if (car["0-60Time"] >= spd_low && (car["0-60Time"] <= spd_high || spd_high == 0) || car["0-60Time"] == "Any") {
+        if (car["0-60Time"] >= spd_low && (car["0-60Time"] <= spd_high || spd_high == 0) || spd == "Any") {
+            console.log("Matched Time")
             isMatch += 1;
         }
         if ((mpg === "electric" && car.MPG === "Electric") || (car.MPG >= mpg_low && car.MPG <= mpg_high) || (mpg_high == 0 && mpg_low != 0 && car.MPG >= mpg_low) || mpg == "Any") {
+            console.log("Matched Efficiency")
             isMatch += 1;
         }
         console.log(`Matched ${isMatch}/5`);
