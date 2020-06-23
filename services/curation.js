@@ -284,15 +284,16 @@ function processCarData(brand, c_class, price, spd, mpg) {
         console.log(car["0-60Time"]);
         console.log("-------------------------------------------------------");
         if (car.Make === brand) {
-            if (car.Classification === c_class) {
-                if (car.AveragePrice >= price_low && (car.AveragePrice <= price_high || price_high === 0)) {
-                    if ((mpg === "electric" && car.MPG === "electric") || (car.MPG >= mpg_low && car.MPG <= mpg_high || (mpg_high === 0 && mpg_low != 0))) {
-                        if (car["0-60Time"] >= spd_low && (car["0-60Time"] <= spd_high || spd_high === 0)) {
-                            matched_cars.push(car);
-                        }
-                    }
-                }
-            }
+            matched_cars.push(cars);
+            // if (car.Classification === c_class) {
+            //     if (car.AveragePrice >= price_low && (car.AveragePrice <= price_high || price_high === 0)) {
+            //         if ((mpg === "electric" && car.MPG === "electric") || (car.MPG >= mpg_low && car.MPG <= mpg_high || (mpg_high === 0 && mpg_low != 0))) {
+            //             if (car["0-60Time"] >= spd_low && (car["0-60Time"] <= spd_high || spd_high === 0)) {
+            //                 matched_cars.push(car);
+            //             }
+            //         }
+            //     }
+            // }
         }
     }
 
