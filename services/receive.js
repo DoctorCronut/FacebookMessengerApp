@@ -31,8 +31,6 @@ module.exports = class Receive {
                 }
             } else if (event.postback) {
                 responses = this.handlePostback();
-            } else if (event.referral) {
-                responses = this.handleReferral();
             }
 
         } catch (error) {
