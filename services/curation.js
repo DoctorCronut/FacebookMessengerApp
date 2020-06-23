@@ -283,24 +283,28 @@ function processCarData(brand, c_class, price, spd, mpg) {
         console.log(car.MPG);
         console.log(car["0-60Time"]);
         console.log("-------------------------------------------------------");
-        console.log(brand);
+        console.log(car);
         let isMatch = 0;
         if (car.Make == brand) {
+            console.log("Matched!");
             isMatch += 1;
         }
         if (car.Classification == c_class) {
+            console.log("Matched!");
             isMatch += 1;
         }
         if (car.AveragePrice >= price_low && (car.AveragePrice <= price_high || price_high === 0)) {
+            console.log("Matched!");
             isMatch += 1;
         }
+        console.log(`Matched ${isMatch}/3`);
         // if ((mpg === "electric" && car.MPG === "electric") || (car.MPG >= mpg_low && car.MPG <= mpg_high) || (mpg_high == 0 && mpg_low != 0 && car.MPG >= mpg_low)) {
         //     isMatch += 1;
         // }
         // if (car["0-60Time"] >= spd_low && (car["0-60Time"] <= spd_high || spd_high == 0)) {
         //     isMatch += 1;
         // } 
-        if (isMatch == 5) {
+        if (isMatch == 3) {
             matched_cars.push(car);
         }
     }
