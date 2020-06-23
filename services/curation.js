@@ -294,12 +294,12 @@ function processCarData(brand, c_class, price, spd, mpg) {
         if (car.AveragePrice >= price_low && (car.AveragePrice <= price_high || price_high === 0)) {
             isMatch += 1;
         }
-        if ((mpg === "electric" && car.MPG === "electric") || (car.MPG >= mpg_low && car.MPG <= mpg_high) || (mpg_high == 0 && mpg_low != 0 && car.MPG >= mpg_low)) {
-            isMatch += 1;
-        }
-        if (car["0-60Time"] >= spd_low && (car["0-60Time"] <= spd_high || spd_high == 0)) {
-            isMatch += 1;
-        } 
+        // if ((mpg === "electric" && car.MPG === "electric") || (car.MPG >= mpg_low && car.MPG <= mpg_high) || (mpg_high == 0 && mpg_low != 0 && car.MPG >= mpg_low)) {
+        //     isMatch += 1;
+        // }
+        // if (car["0-60Time"] >= spd_low && (car["0-60Time"] <= spd_high || spd_high == 0)) {
+        //     isMatch += 1;
+        // } 
         if (isMatch == 5) {
             matched_cars.push(car);
         }
