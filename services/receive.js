@@ -66,7 +66,7 @@ module.exports = class Receive {
 
         if ((greeting && greeting.confidence > 0.8) ||
             message.includes("start over")) {
-            response = Response.genNuxMessage();
+            response = Response.genStartMessage();
             matched_cars = [];
             qualities = [];
         } else {
@@ -125,19 +125,14 @@ module.exports = class Receive {
             payload == "DEVDOCS" ||
             payload == "GITHUB"
         ) {
-            reponse = Response.genNuxMessage();
+            console.log("BROASDASD");
+            reponse = Response.genStartMessage();
         } else if (payload.includes("END")) {
             response = Response.genEndMessage();
         } else if (payload.includes("CURATION")) {
             console.log("Accessed");
             let curation = new Curation(this.user, this.webhookEvent);
             response = curation.handlePayload(payload);
-            console.log("Set" + response);
-        } else if (payload.includes("CHAT-PLUGIN")) {
-            response = [
-                Response.genText(i18n.chat_plugin.prompt),
-                Response.genText(i18n.get_started.guidance)
-            ];
         } else {
             response = {
                 text: `This is a default postback message for payload: ${payload}!`

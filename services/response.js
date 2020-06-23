@@ -20,64 +20,6 @@ module.exports = class Response {
         return response;
     }
 
-    static genGenericTemplate(title, subtitle, buttons) {
-        let response = {
-            attachment: {
-                type: "template",
-                payload: {
-                    type: "template",
-                    payload: {
-                        template_type: "generic",
-                        elements: [
-                            {
-                                title: title,
-                                subtitle: subtitle,
-                                buttons: buttons
-                            }
-                        ]
-                    }
-                }
-            }
-        };
-
-        return response;
-    }
-
-    static genImageTemplate(image_url, title, subtitle = "") {
-        let response = {
-            attachment: {
-                type: "template",
-                payload: {
-                    template_type: "generic",
-                    elements: [
-                        {
-                            title: title,
-                            subtitle: subtitle,
-                            image_url: image_url
-                        }
-                    ]
-                }
-            }
-        };
-
-        return response;
-    }
-
-    static genButtonTemplate(title, buttons) {
-        let response = {
-            attachment: {
-                type: "template",
-                payload: {
-                    template_type: "button",
-                    text: title,
-                    buttons: buttons
-                }
-            }
-        };
-
-        return response;
-    }
-
     static genText(text) {
         let response = {
             text: text
@@ -95,18 +37,7 @@ module.exports = class Response {
         return response;
     }
 
-    static genWebUrlButton(title, url) {
-        let response = {
-            type: "web_url",
-            title: title,
-            url: url,
-            messenger_extensions: true
-        };
-
-        return response;
-    }
-
-    static genNuxMessage() {
+    static genStartMessage() {
         let welcome = this.genText(
             "Hi! Welcome to Japanese Car Match!",
         );

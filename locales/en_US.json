@@ -59,11 +59,5 @@
     "subtitle": "Do you like this car?",
     "show": "Another model",
     "any": "Any"
-  },
-  "chat_plugin": {
-    "prompt": "Thanks for using Japanese Car Match."
-  },
-  "fallback": {
-    "attachment": "Thanks for sending this attachment, we can connect you to an agent to review it or we can start over"
   }
 }
