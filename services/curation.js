@@ -154,7 +154,8 @@ module.exports = class Curation {
             case "CURATION_RANDOM":
                 console.log("reached");
                 let model = this.randomModel();
-                let model_str = `${model.Make} ${model.Model} ${model.Classification}, $${model.AveragePrice}, 0-60Time: ${model["0-60Time"]}s, ${model.MPG}mpg`;
+                let model_str = `${car.Make} ${car.Model} ${car.Classification}, $${car.AveragePrice}, 0-60Time: ${car["0-60Time"]}s, ${car.MPG}mpg`;
+                if (car.MPG == "Electric") model_str = `${car.Make} ${car.Model} ${car.Classification}, $${car.AveragePrice}, 0-60Time: ${car["0-60Time"]}s, ${car.MPG}`;
                 let buttons = [
                     Response.genPostbackButton(
                         "Yes",
@@ -188,6 +189,7 @@ module.exports = class Curation {
         if (matched_cars.length > 0) {
             let car = matched_cars[matched_cars.length - 1]
             let model_str = `${car.Make} ${car.Model} ${car.Classification}, $${car.AveragePrice}, 0-60Time: ${car["0-60Time"]}s, ${car.MPG}mpg`;
+            if (car.MPG == "Electric") model_str = `${car.Make} ${car.Model} ${car.Classification}, $${car.AveragePrice}, 0-60Time: ${car["0-60Time"]}s, ${car.MPG}`;
             let buttons = [
                 Response.genPostbackButton(
                     "Yes",
