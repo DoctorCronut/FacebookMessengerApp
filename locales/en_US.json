@@ -57,7 +57,8 @@
     ],
     "title": "Match Found",
     "subtitle": "Do you like this car?",
-    "show": "Another model"
+    "show": "Another model",
+    "any": "Any"
   },
   "chat_plugin": {
     "prompt": "Thanks for using Japanese Car Match."

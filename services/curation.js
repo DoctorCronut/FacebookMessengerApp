@@ -39,6 +39,10 @@ module.exports = class Curation {
                     {
                         title: i18n.curation.brands[3],
                         payload: "CURATION_BRANDS"
+                    },
+                    {
+                        title: i18n.curation.any,
+                        payload: "CURATION_BRANDS"
                     }
 
                 ]);
@@ -72,6 +76,10 @@ module.exports = class Curation {
                     {
                         title: i18n.curation.classes[6],
                         payload: "CURATION_FOR_CLASSES"
+                    },
+                    {
+                        title: i18n.curation.any,
+                        payload: "CURATION_FOR_CLASSES"
                     }
                 ]);
                 break;
@@ -92,6 +100,10 @@ module.exports = class Curation {
                     {
                         title: i18n.curation.prices[3],
                         payload: "CURATION_PRICES"
+                    },
+                    {
+                        title: i18n.curation.any,
+                        payload: "CURATION_PRICES"
                     }
                 ]);
                 break;
@@ -107,6 +119,10 @@ module.exports = class Curation {
                     },
                     {
                         title: i18n.curation.spd_range[2],
+                        payload: "CURATION_SPEED"
+                    },
+                    {
+                        title: i18n.curation.any,
                         payload: "CURATION_SPEED"
                     }
                 ]);
@@ -131,6 +147,10 @@ module.exports = class Curation {
                     },
                     {
                         title: i18n.curation.mpg_range[4],
+                        payload: "CURATION_RESULT"
+                    },
+                    {
+                        title: i18n.curation.any,
                         payload: "CURATION_RESULT"
                     }
                 ]);
@@ -237,41 +257,44 @@ function processCarData(brand, c_class, price, spd, mpg) {
     let spds = spd.split(" ");
     let mpgs = mpg.split(" ");
     let price_low, price_high, spd_low, spd_high, mpg_low, mpg_high = 0;
-
-    if (prices[0] == "15k") {
-        price_low = 15000;
-        price_high = 25000;
-    } else if (prices[0] == "25k") {
-        price_low = 25000;
-        price_high = 35000;
-    } else if (prices[0] == "35k") {
-        price_low = 35000;
-        price_high = 45000;
-    } else if (prices[0] == "45k") {
-        price_low = 45000;
+    if (price != "Any") {
+        if (prices[0] == "15k") {
+            price_low = 15000;
+            price_high = 25000;
+        } else if (prices[0] == "25k") {
+            price_low = 25000;
+            price_high = 35000;
+        } else if (prices[0] == "35k") {
+            price_low = 35000;
+            price_high = 45000;
+        } else if (prices[0] == "45k") {
+            price_low = 45000;
+        }
     }
-
-    if (spds[0] == "2.5s") {
-        spd_low = 2.5;
-        spd_high = 6.25;
-    } else if (spds[0] == "6.25s") {
-        spd_low = 6.25;
-        spd_high = 10;
-    } else if (spds[0] == "10s") {
-        spd_low = 10;
+    if (spd != "Any") {
+        if (spds[0] == "2.5s") {
+            spd_low = 2.5;
+            spd_high = 6.25;
+        } else if (spds[0] == "6.25s") {
+            spd_low = 6.25;
+            spd_high = 10;
+        } else if (spds[0] == "10s") {
+            spd_low = 10;
+        }
     }
-
-    if (mpgs[0] == "15") {
-        mpg_low = 15;
-        mpg_high = 28.75;
-    } else if (mpgs[0] == "28.75") {
-        mpg_low = 28.75;
-        mpg_high = 42.5;
-    } else if (mpgs[0] == "42.5") {
-        mpg_low = 42.5;
-        mpg_high = 56.25;
-    } else if (mpgs[0] == "56.25") {
-        mpg_low = 56.25;
+    if (mpg != "Any") {
+        if (mpgs[0] == "15") {
+            mpg_low = 15;
+            mpg_high = 28.75;
+        } else if (mpgs[0] == "28.75") {
+            mpg_low = 28.75;
+            mpg_high = 42.5;
+        } else if (mpgs[0] == "42.5") {
+            mpg_low = 42.5;
+            mpg_high = 56.25;
+        } else if (mpgs[0] == "56.25") {
+            mpg_low = 56.25;
+        }
     }
 
     for (var i = 0; i < cars.length; i++) {
@@ -286,22 +309,22 @@ function processCarData(brand, c_class, price, spd, mpg) {
         console.log("-------------------------------------------------------");
         console.log(car);
         let isMatch = 0;
-        if (car.Make == brand) {
+        if (car.Make == brand || brand == "Any") {
             console.log("Matched!");
             isMatch += 1;
         }
-        if (car.Classification == c_class) {
+        if (car.Classification == c_class || c_class == "Any") {
             console.log("Matched!");
             isMatch += 1;
         }
-        if (car.AveragePrice >= price_low && (car.AveragePrice <= price_high || price_high === 0)) {
+        if (car.AveragePrice >= price_low && (car.AveragePrice <= price_high || price_high === 0) || price == "Any") {
             console.log("Matched!");
             isMatch += 1;
         }
-        if (car["0-60Time"] >= spd_low && (car["0-60Time"] <= spd_high || spd_high == 0)) {
+        if (car["0-60Time"] >= spd_low && (car["0-60Time"] <= spd_high || spd_high == 0) || car["0-60Time"] == "Any") {
             isMatch += 1;
         }
-        if ((mpg === "electric" && car.MPG === "Electric") || (car.MPG >= mpg_low && car.MPG <= mpg_high) || (mpg_high == 0 && mpg_low != 0 && car.MPG >= mpg_low)) {
+        if ((mpg === "electric" && car.MPG === "Electric") || (car.MPG >= mpg_low && car.MPG <= mpg_high) || (mpg_high == 0 && mpg_low != 0 && car.MPG >= mpg_low) || mpg == "Any") {
             isMatch += 1;
         }
         console.log(`Matched ${isMatch}/5`);
