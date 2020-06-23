@@ -185,7 +185,7 @@ module.exports = class Curation {
 
     genCurationResponse() {
         let response;
-        if (matched_cars > 0) {
+        if (matched_cars.length > 0) {
             let car = matched_cars[matched_cars.length - 1]
             let model_str = `${car.Make} ${car.Model} ${car.Classification}, $${car.AveragePrice}, 0-60Time: ${car["0-60Time"]}s, ${car.MPG}mpg`;
             let buttons = [
