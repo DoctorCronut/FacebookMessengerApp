@@ -233,8 +233,7 @@ function processCarData(brand, c_class, price, spd, mpg) {
     let cars = car_data;
     let prices = price.split(" ");
     let spds = spd.split(" ");
-    let mpgs;
-    if (mpg != "electric") mpgs = mpg.split(" ");
+    let mpgs = mpg.split(" ");
     let price_low, price_high, spd_low, spd_high, mpg_low, mpg_high = 0;
 
     if (prices[0] == "15k") {
