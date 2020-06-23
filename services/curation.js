@@ -299,7 +299,7 @@ function processCarData(brand, c_class, price, spd, mpg) {
         if (car["0-60Time"] >= spd_low && (car["0-60Time"] <= spd_high || spd_high == 0)) {
             isMatch += 1;
         }
-        if ((mpg === "electric" && car.MPG === "electric") || (car.MPG >= mpg_low && car.MPG <= mpg_high) || (mpg_high == 0 && mpg_low != 0 && car.MPG >= mpg_low)) {
+        if ((mpg === "electric" && car.MPG === "Electric") || (car.MPG >= mpg_low && car.MPG <= mpg_high) || (mpg_high == 0 && mpg_low != 0 && car.MPG >= mpg_low)) {
             isMatch += 1;
         }
         console.log(`Matched ${isMatch}/5`);
