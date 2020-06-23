@@ -68,6 +68,7 @@ module.exports = class Receive {
             message.includes("start over")) {
             response = Response.genNuxMessage();
             matched_cars = [];
+            qualities = [];
         } else {
             response = [
                 Response.genText(
