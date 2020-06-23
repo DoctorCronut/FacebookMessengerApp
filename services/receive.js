@@ -70,6 +70,8 @@ module.exports = class Receive {
             matched_cars = [];
             qualities = [];
         } else {
+            matched_cars = [];
+            qualities = [];
             response = [
                 Response.genText(
                     `Sorry, but I don’t recognize \"${this.webhookEvent.message.text}\".`
