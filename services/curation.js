@@ -284,7 +284,7 @@ function processCarData(brand, c_class, price, spd, mpg) {
         console.log(car["0-60Time"]);
         console.log("-------------------------------------------------------");
         console.log(brand);
-        if (car.Make === brand) {
+        if (car.Make == brand) {
             matched_cars.push(car);
             // if (car.Classification === c_class) {
             //     if (car.AveragePrice >= price_low && (car.AveragePrice <= price_high || price_high === 0)) {
@@ -295,7 +295,7 @@ function processCarData(brand, c_class, price, spd, mpg) {
             //         }
             //     }
             // }
-            console.log(matched_cars);
+            console.log(matched_cars.length);
         }
     }
 
