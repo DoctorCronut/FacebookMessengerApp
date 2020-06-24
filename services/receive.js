@@ -118,14 +118,7 @@ module.exports = class Receive {
 
         let response;
 
-        if (
-            payload == "GET_STARTED" ||
-            payload == "DEVDOCS" ||
-            payload == "GITHUB"
-        ) {
-            console.log("BROASDASD");
-            reponse = Response.genStartMessage();
-        } else if (payload.includes("END")) {
+        if (payload.includes("END")) {
             response = Response.genEndMessage();
         } else if (payload.includes("CURATION")) {
             console.log("Accessed");
